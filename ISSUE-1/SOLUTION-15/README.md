@@ -2,6 +2,8 @@ Hi,
 
 here is my solution:
 
+<code>
+
   1 #! /usr/bin/env python3.2
   2 # challenge20120324.py
   3 
@@ -18,6 +20,8 @@ here is my solution:
  14         c[n] = c[n] - m
  15     x = (c[0]*b[1]-b[0]*c[1])/math.hypot(b[0], b[1])
  16     return abs(x)                                           
+
+</code>
 
 Just moving A into the origin and then rotate B to the y-axis, so the
 distance is the x value of C.
