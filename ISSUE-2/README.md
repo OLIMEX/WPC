@@ -34,3 +34,5 @@ Solutions:
 5. Tobias Hulsdau, Python - works!
 
 6. Piotr Gapinski, Prolog - most exotic solution! works
+
+7. Petr Konecny, Python - works with arrays up to 100 000 elements!
