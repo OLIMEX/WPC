@@ -22,10 +22,8 @@ local function next_substring(str, cache)
 
          for win = 1, #str do -- substring window length
              for pos = 1, #str-win+1 do -- substring position
-                 local sub = string.sub(str, pos, pos+win-1) -- 
-substring with given window and position
-                 if not cache[sub] then -- only consider non-cached 
-substrings
+                 local sub = string.sub(str, pos, pos+win-1) -- substring with given window and position
+                 if not cache[sub] then -- only consider non-cached substrings
                      coroutine.yield(sub) -- return substring
                  end
              end
@@ -45,8 +43,7 @@ for i, v in ipairs(words) do -- loop over strings in input
 
          for j, w in ipairs(words) do -- loop over paired string in input
              if i ~= j then -- skip self
-                 match = string.find(w, sub) -- look for substring in 
-paired string
+                 match = string.find(w, sub) -- look for substring in paired string
                  if match then
                      cache[sub] = true -- cache this substring
                      break -- exit inner loop when match was found
@@ -54,7 +51,6 @@ paired string
              end
          end
 
-         if not match then print(v .. ' -> ' .. sub) break end -- there 
-was no match -> print result
+         if not match then print(v .. ' -> ' .. sub) break end -- there was no match -> print result
      end
 end

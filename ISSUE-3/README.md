@@ -24,34 +24,34 @@ i.e. if you search for “a” in all words you will find it only in “A13-OLinuXino”
 Solutions:
 ==
 
-1. Dylan, Python - works, received 26 minutes after the problem post
+1. Dylan, Python - works, received 26 minutes after the problem post, and one of smallest too just 10 rows solve the problem
 
-2. Zokier, Python -
+2. Zokier, Python - works, very small and compact code
 
-3. Davide Silvestri, Python -
+3. Davide Silvestri, Python - works, clean and commented code
 
-4. Mateusz Klatecki, C -
+4. Mateusz Klatecki, C - works, I admire everyone who works with strings in C ;-)
 
-5. Hanspeter Portner, Lua -
+5. Hanspeter Portner, Lua 
 
-6. Mikhail Soloviev, C++ -
+6. Mikhail Soloviev, C++ 
 
-7. Antal Koos, Python - 
+7. Antal Koos, Python - works in both case sensetive and case insensetive
 
-8. Piotr Gapinski, AWK - "$ gawk -f olimex.awk input"
+8. Piotr Gapinski, AWK - "$ gawk -f olimex.awk input" most exotic solution
 
-9. Francesco Frassinelli, Python - 
+9. Francesco Frassinelli, Python - another small and clean solution
 
-10. Lukasz Pulka, Python - 
+10. Lukasz Pulka, Python - mix python/c
 
-11. Diego Roversi, Python -
+11. Diego Roversi, Python 
 
-12. Miller Wang, C - 
+12. Miller Wang, C 
 
-13. Johannes Lummel, Prolog - 
+13. Johannes Lummel, PureBasic 
 
-14. Petr Konecny, Python - 
+14. Petr Konecny, Python - another small and clean solutiion
 
-15. Emilio Lopez, Python - 
+15. Emilio Lopez, Python 
 
-16. Bogdan Marinescu, Lua - 
+16. Bogdan Marinescu, Lua - interesting approach to work with numbers instead strings at start
