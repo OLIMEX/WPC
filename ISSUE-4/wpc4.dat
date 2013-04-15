@@ -1,0 +1,69 @@
+#!/usr/bin/awk -f
+#
+# make it executable and start it like
+#
+#	./wpc4 textfile
+#
+
+#
+# treat everything not being a sequence of letters as record separator
+#
+BEGIN {
+	RS="[^A-Za-z]"
+}
+#
+# the above will let the empty line pass thru, it is "the empty word"
+#
+# so with $0 as condition for a per line action will only match nonempty
+# lines... which are words here...
+#
+$0 {
+	#
+	# make it lowercase and store it
+	#
+	word=tolower($0)
+
+	#
+	# WordSeen is an associative array remembering previously seen
+	# words
+	#
+	# so skip to next line if already seen...
+	#
+	if(word in WordSeen) next
+	# implicit else
+	WordSeen[word]=1
+
+	#
+	# break word into array Letters
+	#
+	split(word,Letters,"")
+
+	#
+	# delete array CharSeen which might be there from investigating
+	# a previous line
+	#
+	delete CharSeen
+
+	#
+	# increment CharSeen for each char in Letters
+	# stop processing if the first char is found to occur twice
+	#
+	for(char in Letters)
+		if(++CharSeen[Letters[char]]>1)
+			next
+
+	#
+	# so here wie have: word only contains each of its chars only once
+	#
+	# remember word and its length if it is longer than previously
+	# found one
+	#
+	len=length(word)
+	if(len>maxlen) { maxword=word ; maxlen=len }
+}
+#
+# END of file action: print result
+#
+END {
+	print maxword
+}

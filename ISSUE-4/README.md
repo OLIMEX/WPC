@@ -38,7 +38,7 @@ Solutions:
 
 13. Andrey E. Pozhogin, Python
 
-14. Petko Bordjukov, Closure
+14. Petko Bordjukov, Clojure
 
 15. Hanspeter Portner, Flex C
 
