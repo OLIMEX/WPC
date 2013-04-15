@@ -1,0 +1,7 @@
+all:	isogram
+
+isogram.c:	isogram.l
+	flex -o $@ $<
+
+isogram:	isogram.c
+	gcc -o $@ $<

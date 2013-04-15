@@ -1,0 +1,26 @@
+WPC - issue 4
+
+x86 assembler code to find the longest isogram in the input text.
+
+The solution require x86 compatible machine, Linux, nasm, and make to compile.
+It uses sys_read to read the input text from stdin.
+
+Code is quite fast and has low memory footprint.
+
+It reads at most 8192 bytes from STDIN, than splits words from imput text and
+checks if the given word is isogram. 
+
+Assembly code is faster about 4 times than my Python code for large data
+sets. And about 10 times for small data sets (like the Alice in Wonderland).
+
+Please execute "make" compile the source.
+It tries to detect arch type (32bit, or AMD64).
+
+I assume that words consists of letters (a-z, and A-Z).  
+Code reads input from stdin and output result to stdout.
+
+Regards,
+Lukasz Pulka
+lukasz at oxnet.pl
+
+   

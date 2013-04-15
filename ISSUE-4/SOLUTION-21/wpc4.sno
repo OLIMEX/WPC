@@ -1,0 +1,81 @@
+Weekend Programming Challenge #4
+
+This week, in SNOBOL4 - a text processing language from the 70's
+
+Ian K Rolfe
+----------------------------
+
+ian@minty ~/Dev/snobol $ cat ISOGRAM.SNO 
+* ISOGRAM.SNO
+*
+* EXTRACT ALL THE ISOGRAMMATIC WORDS FROM STDIN AND COUNT THEM
+*
+* Define a pattern that defines a word
+        LETTERS = &UCASE &LCASE              ;* These can start a word
+        NUMERALS  = "0123456789"
+        REMAINDER = "'’" LETTERS NUMERALS    ;* These can be after initial ltr
+        WPATTERN = SPAN(LETTERS) (SPAN(REMAINDER) | '') ;* Word pattern
+* Create table to hold words
+        LEXICON = TABLE()
+*
+* LOOP THRU THE WORDS IN THE TEXT AND COUNT THEM
+*
+NXLINE  LINE = INPUT                         :F(DONE)
+        LINE = REPLACE(LINE, &LCASE, &UCASE) ;* convert to uppercase
+NXWORD  LINE BREAK(LETTERS) WPATTERN . WORD = '' :F(NXLINE)
+        WORD "’" = "'"                       ;* rplace slant quote with apos.
+        WORD "'" RPOS(0) = ""                ;* remove trailing quote
+*
+* SLICE THE CHARS OFF 1 AT A TIME AND SEE IF IN REMAINDER OF STRING
+*
+        TEMP = WORD
+NXCHR   TEMP LEN(1) . CH = ""                :F(ISISOGR)
+        TEMP BREAK(CH)                       :S(NXWORD)F(NXCHR)
+ISISOGR LEXICON<WORD> = LEXICON<WORD> + 1    :(NXWORD)
+* 
+* NOW OUTPUT THE FREQUENCY COUNTS
+*
+DONE    COUNTS = CONVERT(LEXICON, 'ARRAY')   ;* Convert table to array
+        COUNTS = SORT(COUNTS, 1)             ;* so we can sort and scan down
+        COUNTS = RSORT(COUNTS, 2)            ;* it, to output the words.
+        I = 1
+OUTCT   WORD = COUNTS<I,1>                   :F(END)
+        COUNT = COUNTS<I,2>
+        DOTS = SUBSTR(DUPL(" .",20),SIZE(WORD) + 1, 40 - SIZE(WORD COUNT))
+        OUTPUT = WORD DOTS COUNT
+        I = I + 1 :(OUTCT)
+END
+ian@minty ~/Dev/snobol $ snobol4 ISOGRAM.SNO <alice_in_wonderland.txt
+
+THE. . . . . . . . . . . . . . . . .1636
+AND. . . . . . . . . . . . . . . . . 872
+TO . . . . . . . . . . . . . . . . . 730
+A. . . . . . . . . . . . . . . . . . 630
+SHE. . . . . . . . . . . . . . . . . 540
+IT . . . . . . . . . . . . . . . . . 528
+OF . . . . . . . . . . . . . . . . . 513
+SAID . . . . . . . . . . . . . . . . 461
+I. . . . . . . . . . . . . . . . . . 410
+ALICE. . . . . . . . . . . . . . . . 386
+IN . . . . . . . . . . . . . . . . . 367
+YOU. . . . . . . . . . . . . . . . . 364
+WAS. . . . . . . . . . . . . . . . . 356
+AS . . . . . . . . . . . . . . . . . 263
+HER. . . . . . . . . . . . . . . . . 247
+AT . . . . . . . . . . . . . . . . . 211
+ON . . . . . . . . . . . . . . . . . 194
+WITH . . . . . . . . . . . . . . . . 179
+:
+: (Lots of lines removed)
+:
+WORE . . . . . . . . . . . . . . . . . 1
+WORKS. . . . . . . . . . . . . . . . . 1
+WORM . . . . . . . . . . . . . . . . . 1
+X. . . . . . . . . . . . . . . . . . . 1
+XI . . . . . . . . . . . . . . . . . . 1
+YARD . . . . . . . . . . . . . . . . . 1
+YARDS. . . . . . . . . . . . . . . . . 1
+YE . . . . . . . . . . . . . . . . . . 1
+YEARS. . . . . . . . . . . . . . . . . 1
+YELP . . . . . . . . . . . . . . . . . 1
+

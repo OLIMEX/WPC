@@ -1,0 +1,17 @@
+WPC - issue 4
+
+Python code to find the longest isogram in the input text.
+
+Code is quite simple, it isolates unique strings in the input text, then
+sort them, in the way that longer strings are processed first.
+
+The first found isogram is printed, as it is the longest one. 
+
+I assume that words consists of letters (a-z, and A-Z).
+Code reads input from stdin and output result to stdout.
+
+Regards,
+Lukasz Pulka
+lukasz at oxnet.pl
+
+   
