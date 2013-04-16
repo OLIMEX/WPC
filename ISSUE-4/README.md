@@ -71,3 +71,5 @@ Solutions:
 29. Lukasz Pulka, Assembler ;) this should be with the smallest compiled code 
 
 30. Emiliano Daddario, Scala
+
+31. Paul Callaghan, Haskell (late entry)
