@@ -73,3 +73,5 @@ Solutions:
 30. Emiliano Daddario, Scala
 
 31. Paul Callaghan, Haskell (late entry)
+
+32. Atanas Bachvaroff, Common LISP (late entry)
