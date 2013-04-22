@@ -1,0 +1,7 @@
+all:	buffons_needle
+
+%:	%.c
+	gcc -o $@ $< -lm
+
+test:	buffons_needle test.conf
+	time ./$< < test.conf

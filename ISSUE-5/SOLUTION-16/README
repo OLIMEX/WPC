@@ -1,0 +1,19 @@
+WPC-5 C++ Solution (Buffon's Needle)
+
+Mersenne twister is used to generate random numbers needed for calculating
+Pi. 
+
+Code can calculate Pi for both cases, where the distance between lines (d)
+greater the the length of the needle (l), and when the length of the needle
+is smaller the the distance between parallel lines.
+
+The tricky part is randomizing the direction (the theta angle) without usage
+of the Pi constant. To see the details, end explanation for the algorithm 
+used please see: http://www.efg2.com/Lab/Mathematics/Buffon.htm .
+ 
+To compile C++ compiler which supports C++11 is needed. 
+GCC version 4.7.2 was used to test the code.
+Please use  "make" to build the executable.
+ 
+Lukasz Pulka
+lukasz at oxnet.pl

@@ -1,0 +1,24 @@
+Hi,
+
+Attached is my solution to this week's WPC. It's made in C and will only
+run successfully as root on sunxi hardware as it uses the sunxi hardware
+PRNG via /dev/mem (I have only tested it on sun4i, but it should
+theorically work on sun5i too)
+
+To compile, run something like "make CROSS_COMPILE=arm-linux-gnueabihf-"
+then push the binary to your sunxi device of choice and run it as root:
+
+$ sudo ./approximate-pi 5 6 213
+Simulating 213 runs with needles of length 5.00 and stripes of length 6.00
+PI is approximately 3.141593 (113/213 across)
+
+As it uses a PRNG, the results should be completely reproducible
+assuming you use the same simulation parameters and the same seed. You
+can change the seed in the code (seedval array in main()) if you wish to.
+
+I'm not too happy with the code quality, but the weekend is almost over
+and I need to get other things done still :) I hope you like it.
+
+Cheers,
+
+Emilio

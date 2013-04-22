@@ -1,0 +1,9 @@
+Setup procedure:
+- instal b-prolog interpreter and run bp.bat (or bp.sh).
+- at command prompt ?- type: consult(wpc5).
+- to compute pi value in 1000 iterations type: go.
+- or try something else via: genpi(10000,PI).
+
+length of the needle and distance between lines ale hardcoded within
+wpc5.plfile.
+
