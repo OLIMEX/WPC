@@ -51,3 +51,5 @@ Solutions:
 15. Grillo, Python - two solutions
 
 16. Lukasz Pulka, C++ - short and long needle solution
+
+17. Miller Wang, C - small and clean code for both cases long and short needle
