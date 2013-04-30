@@ -1,0 +1,131 @@
+'Import Sleep to see print path.
+Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+Option Explicit
+
+
+Private Sub End_Click()
+End
+End Sub
+
+Private Sub Form_Load()
+Show
+Print "Make sure ""drill.txt"" file path is ""C:\drill.txt"""
+Print "Click Start button to start the process."
+Print "Click End button to exit."
+End Sub
+
+Private Sub Start_Click()
+
+'X, Y as hole positions.
+Dim X(2000), Y(2000) As Double
+'Txx as hole size, Distance to record total distance.
+Dim Txx, TempX, TempY, Distance As Double
+'i, j, k as loop variant
+Dim i, j, k, Count As Integer
+'T store one text line of drill.txt.
+Dim T As String
+'Found as DRC check result flag
+Dim Found As Boolean
+
+Cls
+ForeColor = vbBlack
+
+Open "C:\drill.txt" For Input As #1
+
+Line Input #1, T
+'Get hole size from drill.txt
+Txx = Val(Mid(2, 1) + "." + Mid(3, 1))
+
+While (Not EOF(1))
+    Line Input #1, T
+    i = i + 1
+    Count = Count + 1
+    'Get hole coordinates (X(2000), Y(2000))
+    X(i) = Val(Mid(T, 2, 3) + "." + Mid(T, 5, 3))
+    Y(i) = Val(Mid(T, 9, 3) + "." + Mid(T, 12, 3))
+Wend
+
+Close #1
+
+   'DRC CHECK
+        'Case 1: report ERROR when distance between any two holes is less than Txx(0.2mm)
+         Found = False
+         For i = 1 To Count - 1
+            For j = i + 1 To Count
+                If Sqr((X(i) - X(j)) ^ 2 + (Y(i) - Y(j)) ^ 2) < Txx Then
+                    Found = True
+                End If
+            Next j
+        Next i
+        If Found = True Then
+            Print "Error! There are overlapping holes. Click End Button to exit and re-check hole positions."
+        Else
+            Print "No overlapping holes."
+        End If
+         
+        'Case2: delete duplicate holes when X(i)=X(j) and Y(i)=Y(j)
+         Found = False
+         For i = 1 To Count - 1
+            For j = i + 1 To Count
+                If X(i) = X(j) And Y(i) = Y(j) Then
+                    For k = j To Count
+                        X(k) = X(k + 1)
+                    Next k
+                    Count = Count - 1
+                    Found = True
+                End If
+            Next j
+        Next i
+        If Found = True Then
+            Print "Found duplicate holes."
+        Else
+            Print "No duplicate holes found."
+        End If
+        
+    'Locate the nearest hole to (000.000, 000.000) as (X(1), Y(1)) and start from (X(1), Y(1))
+    
+    For i = 1 To Count - 1
+        If Sqr(X(i) ^ 2 + Y(i) ^ 2) > Sqr(X(i + 1) ^ 2 + Y(i + 1) ^ 2) Then
+            TempX = X(i + 1)
+            TempY = Y(i + 1)
+            X(i + 1) = X(1)
+            Y(i + 1) = Y(1)
+            X(1) = TempX
+            Y(1) = TempY
+        End If
+    Next i
+    
+    ' Save path distance.
+    Distance = Sqr(X(1) ^ 2 + Y(1) ^ 2)
+    
+    ' Suppose (X(1), Y(1)) is (000.000, 000.000) now start searching the next
+    ' hole which makes (X(1), Y(1)) the shortest path to the rest (count-1) holes.
+    ' Calculate distance between (X(1), Y(1)) and the next(second) hole (X(2), Y(2))
+    ' Add path distance to Distance.
+    ' Repeat above process until the last hole is located.
+    
+    For i = 1 To Count - 2
+        For j = i + 1 To Count - 1
+            If Sqr((X(i) - X(j)) ^ 2 + (Y(i) - Y(j)) ^ 2) > Sqr((X(i) - X(j + 1)) ^ 2 + (Y(i) - Y(j + 1)) ^ 2) Then
+                TempX = X(j + 1)
+                TempY = Y(j + 1)
+                X(j + 1) = X(j)
+                Y(j + 1) = Y(j)
+                X(j) = TempX
+                Y(j) = TempY
+            End If
+        Next j
+        Distance = Distance + Sqr((X(i) - X(j)) ^ 2 + (Y(i) - Y(j)) ^ 2)
+    Next i
+    
+    ForeColor = vbRed
+    For i = 1 To Count
+        'Locate each hole (X(i), Y(i)) and print
+        CurrentX = X(i)
+        CurrentY = Y(i)
+        Print "."
+        ' Print 5ms per hole
+        Sleep (5)
+    Next i
+    
+End Sub
