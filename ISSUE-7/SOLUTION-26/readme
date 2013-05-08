@@ -1,0 +1,35 @@
+Hi,
+
+To use it, put the Haskell code on a file.hs and compile with "ghc
+--make file.hs". Then run as "./file [number of steps]"
+
+stepsCombination is the obvious recursive implementation of the problem,
+which is very slow. stepsCombinationFast is a faster implementation,
+using an infinite, lazy list to do the calculations. You can think of
+the problem as a Fibonacci series with different starting numbers if you
+wish :)
+
+Cheers,
+
+Emilio
+
+--
+
+module Main where
+
+import System.Environment
+
+stepsCombination :: Int -> Int
+stepsCombination 1 = 1
+stepsCombination 2 = 2
+stepsCombination n = stepsCombination (n-1) + stepsCombination (n-2)
+
+stepsCombinationFast :: Int -> Int
+stepsCombinationFast n = list !! (n-1)
+	where
+		list = 1 : 2 : zipWith (+) list (tail list)
+
+main = do
+       args <- getArgs
+       let num = read (head args) :: Int
+       print (stepsCombinationFast num)

@@ -1,0 +1,22 @@
+Hi, please find attached my solution for the programming challenge #7.
+
+Again in Gnu Octave!
+
+Rather than 'brute-forcing' I found a way to calculate the total number of
+ways by calculating the potential number of ones and twos that can make up
+a valid sequence for a flight of N steps and then finding the number of
+permutations that number of twos and ones can be arranged into.
+
+The file getTriNum.m is a utility function to find a triangular number
+(required by the main solution file, getCatStairs).  Both files contain
+unit tests which also demo the code usage, to test the main solution file
+type:
+
+test getCatStairs verbose
+
+At the Octave prompt.  These files have been tested in Octave 3.6.2 64-bit
+under Windows 7 and Octave 3.6.2 32-bit under Windows XP.
+
+Regards,
+
+Iain

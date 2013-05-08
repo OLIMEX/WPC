@@ -1,0 +1,14 @@
+Hi,
+I have attached a python script to implement a solution for WPC #7. It is
+basically a fibonacci implementation with memoization. (total_ways =
+cat_walk(n-1) + cat_walk(n-2))
+
+$ python cat_walk.py 1 2 3 4 5
+Total ways for 1 steps: 1
+Total ways for 2 steps: 2
+Total ways for 3 steps: 3
+Total ways for 4 steps: 5
+Total ways for 5 steps: 8
+
+Thanks and Regards
+Damu

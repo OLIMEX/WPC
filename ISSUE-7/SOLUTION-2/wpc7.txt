@@ -1,0 +1,26 @@
+Oh, too easy!
+
+
+#!/usr/bin/perl
+use strict;
+
+# This problem simplifies to the Fibonacci sequence.
+#
+# For a staircase of N steps, we must start off with either a step or a jump.
+# If the first action is a step, the rest of the staircase (N-1 steps) can be
+# done in F(N-1) ways; if the first action is a jump, the rest can be done in
+# F(N-2) ways. Add these together, and we get F(N) = F(N-1) + F(N-2). This is
+# the Fibonacci recurrence!
+
+sub fibonacci {
+    my ($n) = @_;
+
+    # Closed form representation
+    my $phi = (1 + sqrt 5) / 2;
+    return int(0.5 + $phi ** $n / sqrt 5);
+}
+
+die "Usage: olimex7.pl [number-of-steps]\n" if @ARGV != 1;
+my ($steps) = @ARGV;
+die "Invalid input\n" if $steps !~ m{^\d+$};
+printf "%d paths for %d steps\n", fibonacci($steps + 1), $steps;

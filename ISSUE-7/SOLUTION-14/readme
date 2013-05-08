@@ -1,0 +1,68 @@
+Hello,
+
+solution follows. Here's the rationale:
+
+The cat can jump by either one or two stairs . The amount of stairs is fixed, 
+denote it N ; N is natural number (excluding zero). Denote x the number of times 
+the cat jumps one stair, denote y the number of times the cat jumps two stairs ; 
+x,y natural numbers including zero (\math{N}^0). The following equation holds:
+
+1 * x + 2 * y = N                                                    (1.1)
+
+So, to get rid of the cat, this can be transformed to "find all numbers such 
+that their digits consist of element of set {1,2} and their digit sum is N". And 
+this can be rewritten as:
+
+C(N) = \sum_{y=0}^{\floor{N/2}} \frac{((N-2*y)+y)!}{(N-2*y)!*y!}     (1.2)
+
+Mapping this back to jumping cat, y is the number of two-stairs jumps, but we 
+care only for the amount, which can be at most N/2 rounded down to nearest 
+natural number. After doing y two-stair jumps, the cat can only do x=N-2*y 
+single-stair jumps. Therefore each round of the sum produces one fitting 
+solution for the equation (1.1) .
+
+For each fitting solution of (1.1), we now calculate a simple permutation with 
+repetition of x and y elements, P'(x, y)=\frac{(x+y)!}{x!y!} . Finally, 
+summation of the permutations will produce the final result, C(N) (as for cat, 
+parametrized by N). Find result at [1], just adjust the N as needed.
+
+...
+
+Here is another interesting thing about the above summation. By observation, one 
+can notice the summation behaves similar to FIB(N) function:
+
+FIB_{N+1} = \sum_{y=0}^{\floor{N/2}} (N-y \choose y)
+
+Let's try to proove this:
+
+C(N) = FIB_{N+1}
+
+\sum_{y=0}^{\floor{N/2}} \frac{((N-2*y)+y)!}{(N-2*y)!*y!} = 
+\sum_{y=0}^{\floor{N/2}} (N-y \choose y)
+
+We can remove the summations:
+
+\frac{((N-2*y)+y)!}{(N-2*y)!*y!} = (N-y \choose y)
+
+Expanding the combination number on the right:
+
+\frac{((N-2*y)+y)!}{(N-2*y)!*y!} = \frac{(N-y)!}{y!*(N-y-y)!}
+
+Notice both the nominator and denominator are equal. And therefore finally:
+
+C(N) = FIB_{N+1} .
+
+NOTE: We need to define C(0) = 0 by hand.
+
+QED
+
+Solution can be found at [2].
+
+...
+
+[1] 
+http://www.wolframalpha.com/input/?i=N%3D5+%3B+%28sum+%28%28%28%28N-2*y%29%2By%29!%29%2F%28%28N-2*y%29!*y!%29%29%2C+y%3D0+to+floor%28N%2F2%29%29
+[2] http://www.wolframalpha.com/input/?i=N%3D5+%3B+fib%28N%2B1%29
+
+Best regards,
+Marek Vasut

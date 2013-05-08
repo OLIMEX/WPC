@@ -1,0 +1,61 @@
+Since this is about cats, it seemed entirely appropriate to code this weekends challenge in LOLpython:
+http://dalkescientific.com/writings/diary/archive/2007/06/01/lolpython.html
+
+This was a lot of fun, but I'm not sure LOLpython is ready for mainstream yet :)
+
+Ian K Rolfe
+
+-----------------------------
+ian@minty ~/Dev/python/olimex $ cat kitteh_wepc.lol
+
+BTW, Olimex weekend challenge. Kitteh jumps up N stairs 1 or 2 at a time.
+BTW, How many different ways can he do this? LOL
+
+SO IM LIKE JUMPINSTEPS WIT MANYSTEPS OK?
+    SO IM LIKE JUMPIN_UP WIT SO_FAR AND STEPZ OK?
+        IZ STEPZ?
+            SO_FAR CAN HAZ SO_FAR ALONG WITH SOME STEPZ OK
+        NUM_HAS_JUMPT CAN HAZ sum WIT SO_FAR OK
+        IZ NUM_HAS_JUMPT KINDA LIKE MANYSTEPS?
+            U BORROW SO_FAR
+        IZ NUM_HAS_JUMPT ATE FEWER CHEEZBURGERS THAN MANYSTEPS?
+            GIMME EACH POUNCE IN UR JUMPIN_UP WIT SO_FAR AND CHEEZBURGER OK?
+                U BORROW POUNCE
+            GIMME EACH POUNCE IN UR JUMPIN_UP WIT SO_FAR AND 2 OK?
+                U BORROW POUNCE
+    GIMME EACH POUNCE IN UR JUMPIN_UP WIT INVISIBLE LIST AND EASTERBUNNY OK?
+        U BORROW POUNCE
+
+IZ __name__ KINDA LIKE "__main__"?
+    WHILE I CUTE?
+        PLZ?
+            STARECASE CAN HAZ raw_input WIT "NUMBR OV STEPZ? " OK
+            STARECASE CAN HAZ NUMBR STARECASE AND ALLFINGERZ OK
+
+        O NOES ValueError?
+            I IZ CUTE
+
+        IZ KEWL?
+            KTHXBYE
+    WAYZ CAN HAZ EASTERBUNNY
+    GIMME EACH JUMPZ IN UR JUMPINSTEPS WIT STARECASE OK?
+        WAYZ GETZ ANOTHR CHEEZBURGER
+        VISIBLE JUMPZ
+    VISIBLE "YOU CAN HAZ" AND WAYZ AND "WAYZ!"
+ian@minty ~/Dev/python/olimex $ ./lolpython.py kitteh_wepc.lol
+NUMBR OV STEPZ? 6
+[1, 1, 1, 1, 1, 1]
+[1, 1, 1, 1, 2]
+[1, 1, 1, 2, 1]
+[1, 1, 2, 1, 1]
+[1, 1, 2, 2]
+[1, 2, 1, 1, 1]
+[1, 2, 1, 2]
+[1, 2, 2, 1]
+[2, 1, 1, 1, 1]
+[2, 1, 1, 2]
+[2, 1, 2, 1]
+[2, 2, 1, 1]
+[2, 2, 2]
+YOU CAN HAZ 13 WAYZ!
+ian@minty ~/Dev/python/olimex $

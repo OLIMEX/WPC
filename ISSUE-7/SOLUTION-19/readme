@@ -1,0 +1,41 @@
+Hello Olimex
+
+Here a solution in Pascal. The processing is done in one line in the function CatWays. It states that the cat may take 1 or 2 step. Then there
+will be N-1 and N-2 steps left. Intuitive solution.
+
+Kind regards
+Magnus
+
+___________
+TEST:
+The results are e.g.
+
+>catsteps 1
+1
+>catsteps 10
+89
+>catsteps 40
+165580141
+
+__________
+PROGRAM:
+
+program CatSteps;
+{$APPTYPE CONSOLE}
+uses sysutils;
+
+function CatWays(N: int64): int64;
+  // The cat may take one step or two. Then there will be N-1 and N-2 left
+  // If one step left there is one solution, two steps make two solutions
+  begin
+  if N>2 then CatWays:=CatWays(N-1)+CatWays(N-2) else CatWays:=N;
+  end;
+
+  // Main program - check there is an argument and call the function
+  // The argument must be an integer = number of steps
+  begin
+  if paramcount>0 then writeln(CatWays(StrToInt(paramstr(1))));
+  end.
+
+
+

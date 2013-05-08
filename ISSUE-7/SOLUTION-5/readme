@@ -1,0 +1,25 @@
+Hello Olimex Team,
+
+find attached my solution(s).
+
+Contest07.java is the simple one, which is easier to understand (it
+uses a simple recursive calculation).
+Contest07Fast.java uses the same algorithm, but uses simple memoization
+to make it much faster (for 'steps(50)' its 1min49 vs. 0.078s).
+
+But since 92 stairs is the first number where the 64bit long number of
+Java wraps around, I created a third version (Contest07BigNum) which
+can work with really large numbers. Since it also uses
+memoization, its only slightly slower (for 'steps(91)' its 96ms vs.
+80ms).
+(Note: to calculate really large numbers, you need to call it via
+'java -Xss64m de.hendriklipka.contest.olimex.contest07.Contest07BigNum
+100000' because otherwise the stack is too small. But even this call
+only takes about 4 seconds...
+
+[I admit I would have liked to create a solution in a functional
+language this time (Clojure would be the candidate), but I'm not so
+fluent in it and lack enough time during this weekend :(
+So its still Java for me...]
+
+hli
