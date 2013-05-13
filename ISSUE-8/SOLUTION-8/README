@@ -1,0 +1,445 @@
+This one reminded me so much of the programs I wrote back in '79 as a schoolkid I decided to remind people what it was like playing games on a computer with a 1200 baud terminal...
+
+I dont have a workable BASIC interpreter so I did it in Python instead :)
+
+Ian K Rolfe
+===================
+
+
+ian@minty ~/Dev/python $ cat hangman_wepc.py 
+import time
+import sys
+import random
+import re
+
+PATH = "EOWL_CSV/"
+gallows = """%(top)s
+   %(up)s %(strut)s   %(rope)s
+   %(up)s%(strut)s    %(rope)s             Matched: %(matched)s
+   %(up)s   %(head)s%(gasp)s
+   %(up)s    %(mouth)s
+   %(up)s     %(neck)s             Attempts: %(attempts)s
+   %(up)s    %(arml)s%(trunk)s%(armr)s            Guesses: %(guesses)s
+   %(up)s   %(arml)s %(trunk)s %(armr)s                    %(guesses2)s
+   %(up)s    %(legl)s %(legr)s
+   %(up)s  %(footl)s%(legl)s   %(legr)s%(footr)s
+   %(up)s
+%(base)s\n\n"""
+parts = { 'base': "="*14, 'up': " ", 'strut': " ", 'top': " "*10,
+        'rope': " ", 'head': " "*5, 'neck': " ", 'trunk': " ",
+        'arml': " ", 'armr': " ", 'legl': " ", 'legr': " ",
+        'mouth': '   ', 'footl': " ", 'footr': " ", 'gasp': "",
+        'matched': '', 'attempts': '', 'guesses': ''} 
+
+EVIL_MODE = True
+
+# Take us back to the days of 1200 baud modems... 
+# If you don't want that, replace the body of the function with
+#   sys.stdout.write(s)
+def tty(s):
+    for c in s:
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(1.0/120)
+
+def chooseletter(guesses):
+    l = "?"
+    a = "a"
+    letter = "letter"
+    while l not in "abcdefghijklmnopqrstuvwxyz":
+        tty("\nchoose %s %s: "%(a,letter))
+        l = raw_input("").lower()
+        if len(l) != 1:
+            a = "A"
+            l = "?"
+        elif l<'a' or l>'z':
+            letter = "LETTER"
+            l = "?"
+        elif l in guesses:
+            tty("You've already had '%s'\n"%(l,))
+            l="?"
+    return l
+
+def up(parts):
+    parts['up'] = "|"
+
+def strut(parts):
+    parts['strut'] = "/"
+
+def top(parts):
+    parts['top'] = "----------"
+
+def rope(parts):
+    parts['rope'] = "|"
+
+def head(parts):
+    parts['head'] = "(0,0)"
+    parts['mouth'] = "\\^/"
+
+def trunk(parts):
+    parts['neck'] = "M"
+    parts['trunk'] = "|"
+
+def arml(parts):
+    parts['arml'] = "/"
+
+def armr(parts):
+    parts['armr'] = "\\"
+    parts['gasp'] = "-Help!"
+
+def legl(parts):    
+    parts['legl'] = "/"
+    parts['footl'] = "_"
+    parts['gasp'] = "-THINK!"
+
+def legr(parts):
+    parts['legr'] = "\\"
+    parts['footr'] = "_"
+    parts['head'] = "(x.x)" # Dead!
+    parts['gasp'] = "-Gnnn...."
+
+ACTION = [up, strut, top, rope, head, trunk, arml, armr, legl, legr]
+
+# newword, candidates = choose_new_word(word, candidates, guesses, matched)
+def choose_new_word(word, candidates, guesses,matched):
+    newword = word
+    newcandidates = []
+    for candidate in candidates:
+        possible = True
+        if candidate == word:
+            continue
+        for c in guesses:
+            if c in matched:
+                # new word must have matches in right places...
+                for i, l in enumerate(matched):
+                    if l != "*" and candidate[i]!=l:
+                        possible = False
+                        break
+            else:
+                # c was a wrong guess, so must NOT be in new word
+                if c in candidate:
+                    possible = False
+                    break
+        if possible:
+            newcandidates += [candidate]
+    numcandidates = len(newcandidates)
+    if numcandidates>0:
+        newword = newcandidates[random.randint(0,numcandidates-1)]
+
+    return newword, newcandidates
+
+if __name__ == "__main__":
+    tty("Welcome to HANGMAN\n")
+    tty("Loading database")
+    words = []
+    rejected = 0
+    rex = re.compile('^[a-z]+$')
+    for letter in range(ord('A'),ord("Z")+1):
+        letter = chr(letter)
+        filename = PATH + letter + " Words.csv"
+        f = open(filename, 'r')
+        for l in f:
+            l = l.strip()
+            if rex.match(l):
+                words += [l]
+            else:
+                rejected += 1
+        f.close()
+        tty(".")
+
+
+    numwords = len(words)
+    tty("\n%s words loaded\n%s rejected\n"%(numwords,rejected))
+    tty("Choosing a word\n")
+    word = ""
+    while len(word) < 6:
+        word = words[random.randint(0,numwords-1)]
+    #tty("word is " + repr(word) + "\n")
+    guesses = ""
+    wordlen = len(word)
+    matched = "*"*wordlen
+    wrong = 0
+    attempts = 0
+    candidates = [w for w in words if len(w) == wordlen]
+    while True:
+        parts['matched']=matched
+        parts['attempts']=str(attempts)
+        if wrong > 0:
+            parts['attempts'] += " (%s wrong)"%(wrong,)
+        parts['guesses'] = ', '.join(list(guesses[:14]))
+        parts['guesses2'] = ', '.join(list(guesses[14:]))
+        
+        tty(gallows % parts)
+        if wrong >= len(ACTION):
+           break
+        ch = chooseletter(guesses)
+        guesses += ch 
+        attempts += 1
+        if ch in word:
+            if EVIL_MODE:
+                newword, candidates = choose_new_word(word, candidates, guesses, matched)
+                if newword != word:
+                    tty("\nWrong - one more part for the gallows...\n")
+                    word = newword
+                    ACTION[wrong](parts)
+                    wrong += 1
+                    continue
+            tty("\nRight!\n")
+            matched = ""
+            for c in word:
+                if c in guesses:
+                    matched += c
+                else:
+                    matched += "*"
+            if matched == word:
+                tty("Well done! You got it!\n")
+                break
+        else:
+            tty("\nWrong! One more part for the gallows...\n")
+            ACTION[wrong](parts)
+            wrong += 1
+    tty("\nThe word was '%s'\n"%(word,))
+ian@minty ~/Dev/python $ 
+ian@minty ~/Dev/python $ python hangman_wepc.py 
+Welcome to HANGMAN
+Loading database..........................
+128764 words loaded
+217 rejected
+Choosing a word
+          
+          
+                       Matched: ********
+            
+           
+                       Attempts: 0
+                       Guesses: 
+                                
+           
+             
+    
+==============
+
+
+choose a letter: a
+
+Wrong - one more part for the gallows...
+          
+   |      
+   |                   Matched: ********
+   |        
+   |       
+   |                   Attempts: 1 (1 wrong)
+   |                   Guesses: a
+   |                            
+   |       
+   |         
+   |
+==============
+
+
+choose a letter: e
+
+Wrong - one more part for the gallows...
+          
+   | /    
+   |/                  Matched: ********
+   |        
+   |       
+   |                   Attempts: 2 (2 wrong)
+   |                   Guesses: a, e
+   |                            
+   |       
+   |         
+   |
+==============
+
+
+choose a letter: i
+
+Wrong - one more part for the gallows...
+----------
+   | /    
+   |/                  Matched: ********
+   |        
+   |       
+   |                   Attempts: 3 (3 wrong)
+   |                   Guesses: a, e, i
+   |                            
+   |       
+   |         
+   |
+==============
+
+
+choose a letter: o
+
+Wrong - one more part for the gallows...
+----------
+   | /   |
+   |/    |             Matched: ********
+   |        
+   |       
+   |                   Attempts: 4 (4 wrong)
+   |                   Guesses: a, e, i, o
+   |                            
+   |       
+   |         
+   |
+==============
+
+
+choose a letter: u
+
+Right!
+----------
+   | /   |
+   |/    |             Matched: *u**u***
+   |        
+   |       
+   |                   Attempts: 5 (4 wrong)
+   |                   Guesses: a, e, i, o, u
+   |                            
+   |       
+   |         
+   |
+==============
+
+
+choose a letter: y
+
+Wrong! One more part for the gallows...
+----------
+   | /   |
+   |/    |             Matched: *u**u***
+   |   (0,0)
+   |    \^/
+   |                   Attempts: 6 (5 wrong)
+   |                   Guesses: a, e, i, o, u, y
+   |                            
+   |       
+   |         
+   |
+==============
+
+
+choose a letter: b
+
+Right!
+----------
+   | /   |
+   |/    |             Matched: *ub*u***
+   |   (0,0)
+   |    \^/
+   |                   Attempts: 7 (5 wrong)
+   |                   Guesses: a, e, i, o, u, y, b
+   |                            
+   |       
+   |         
+   |
+==============
+
+
+choose a letter: t
+
+Wrong! One more part for the gallows...
+----------
+   | /   |
+   |/    |             Matched: *ub*u***
+   |   (0,0)
+   |    \^/
+   |     M             Attempts: 8 (6 wrong)
+   |     |             Guesses: a, e, i, o, u, y, b, t
+   |     |                      
+   |       
+   |         
+   |
+==============
+
+
+choose a letter: p
+
+Wrong! One more part for the gallows...
+----------
+   | /   |
+   |/    |             Matched: *ub*u***
+   |   (0,0)
+   |    \^/
+   |     M             Attempts: 9 (7 wrong)
+   |    /|             Guesses: a, e, i, o, u, y, b, t, p
+   |   / |                      
+   |       
+   |         
+   |
+==============
+
+
+choose a letter: w
+
+Wrong! One more part for the gallows...
+----------
+   | /   |
+   |/    |             Matched: *ub*u***
+   |   (0,0)-Help!
+   |    \^/
+   |     M             Attempts: 10 (8 wrong)
+   |    /|\            Guesses: a, e, i, o, u, y, b, t, p, w
+   |   / | \                    
+   |       
+   |         
+   |
+==============
+
+
+choose a letter: q
+
+Wrong! One more part for the gallows...
+----------
+   | /   |
+   |/    |             Matched: *ub*u***
+   |   (0,0)-THINK!
+   |    \^/
+   |     M             Attempts: 11 (9 wrong)
+   |    /|\            Guesses: a, e, i, o, u, y, b, t, p, w, q
+   |   / | \                    
+   |    /  
+   |  _/     
+   |
+==============
+
+
+choose a letter: c
+
+Right!
+----------
+   | /   |
+   |/    |             Matched: *ub*u*c*
+   |   (0,0)-THINK!
+   |    \^/
+   |     M             Attempts: 12 (9 wrong)
+   |    /|\            Guesses: a, e, i, o, u, y, b, t, p, w, q, c
+   |   / | \                    
+   |    /  
+   |  _/     
+   |
+==============
+
+
+choose a letter: v
+
+Wrong! One more part for the gallows...
+----------
+   | /   |
+   |/    |             Matched: *ub*u*c*
+   |   (x.x)-Gnnn....
+   |    \^/
+   |     M             Attempts: 13 (10 wrong)
+   |    /|\            Guesses: a, e, i, o, u, y, b, t, p, w, q, c, v
+   |   / | \                    
+   |    / \
+   |  _/   \_
+   |
+==============
+
+
+The word was 'subfuscs'
+ian@minty ~/Dev/python $ 

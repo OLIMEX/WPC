@@ -1,0 +1,33 @@
+WPC8 Problem:
+WPC8.txt
+
+
+Programming Language:
+Visual Basic
+
+
+Project File:
+WPC8_Miller.vbp
+
+
+Form File:
+WPC8.frm
+
+
+.exe File:
+WPC8_Miller.exe
+
+
+Code Text File:
+WPC8_Miller.txt
+
+
+Dictionary(Input Text File):
+A-Z Words.txt
+
+
+WPC8 Dictionary Path(Input Text File Path):
+D:\A-Z Words.txt
+
+
+

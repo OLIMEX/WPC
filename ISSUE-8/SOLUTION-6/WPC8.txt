@@ -1,0 +1,20 @@
+Problem:
+
+Make All-winner Hangman game 
+
+Everybody knows Hangman game http://en.wikipedia.org/wiki/Hangman_(game) and it¡¯s very easy to implement one even with ASCII art on the computer text terminal console, so we will not focus on fancy graphics in this challenge.
+
+To generate the guess word you can use some free English word list, for instance from here: http://dreamsteep.com/projects/the-english-open-word-list.html which contains about 128,000 words.
+
+The challenge this weekend is to make the computer unbeatable. How?
+Each time the player guess letter, if this letter is in your word you have to scan the dictionary for similar word (if possible and do not break the game rules) which have no such letter and replace it, so player is always wrong  .
+
+ The rules:
+
+You can code the solution in any programming language during the weekend and have to submit it to info@olimex.com latest on Sunday May 12th.
+
+On Monday we will upload the solutions on GitHub and review https://github.com/OLIMEX/WPC .
+
+You can play with your real name or with nick if you want to be anonymous, we will not disclosure your personal info if you do not want to.
+
+Good Luck and Have fun!
