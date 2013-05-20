@@ -1,0 +1,18 @@
+Hello Olimex team,
+
+attached you find my solution. Its in Java, and needs to go in a folder
+"de/hendriklipka/contest/olimex/contest09". It expects a filename on
+the command lines. The file needs to have the number of points as its
+first line, and the all other points in "x,y" format on each line.
+
+The algorithm is pretty simple - the program first reads the first 3
+points, and calculates a circle from their coordinates (can be only
+one, if there is no circle we can abort here). After that, it checks
+for each remaining point whether it is on the circle or not.
+
+Since calculation even with double precision are not entirely accurate,
+the comparision for the last step involves a EPSILON value - when the
+point in question is closer than this value to the circle, it is
+considered to be on it.
+
+hli
