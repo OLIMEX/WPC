@@ -1,0 +1,10 @@
+And again a Java solution from me :) It using a greedy algorithm (I
+found out after writing it that its basically the Fibonacci algorithm).
+Unfortunately for some pathological inputs using integer (or long)
+arithmetic mens it won't terminate properly (due to number overflows).
+But I will leave it as it is, for now...
+
+Code goes into a de/hendriklipka/contest/olimex/contest10 directory to
+be compiled. It takes the two numbers as command line arguments.
+
+hli

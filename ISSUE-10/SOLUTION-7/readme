@@ -1,0 +1,10 @@
+Hi, here is my solution. To set A and B, you should change the 
+variables in code (indicated) and recompile the program. Sorry for 
+the inconvenience. I tried it only with small integers, but it can 
+work up to a component as small as 1/100. I used this challenge to 
+practice a bit Ada :).
+The code uses a package taken from rosettacode.org. The programming 
+language is Ada, version 95. I don't know if it compiles with Ada83 
+compilers, but with gnat, it works fine.
+
+andras reuss

@@ -1,0 +1,16 @@
+ue(L,M,M0,P):- L*P-M=:=0, P\=M0, writeln(P),!.
+ue(L,M,M0,P):- L*P-M>0, P\=M0, NL is L*P-M, NM is M*P, NP is P+1,
+format("~w,",[P]), ue(NL,NM,M0,NP).
+ue(L,M,M0,P):- NP is P+1, ue(L,M,M0,NP).
+
+go(L,M):- L=1, writeln(M),!.
+go(L,M):- L>1, L=<M, ue(L,M,M,2).
+
+For example:
+
+?- go(6,7).
+2,3,42
+
+Yes
+?-
+

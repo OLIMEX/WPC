@@ -1,0 +1,61 @@
+Algorithm involving no division!
+
+Ian K Rolfe
+
+===============================
+
+ian@minty ~/Dev/python/olimex $ cat fraction_wepc.py 
+
+#! env python
+#
+# Calculate reciprocal factors of fraction
+#
+def input_int(prompt):
+    while True:
+        try:
+            num = int(raw_input(prompt+" "),10)
+            break
+        except ValueError:
+            print "Not a integer dumbass. Try again!"
+            pass
+    return num
+
+def calc_frac(a,b):
+    factor = 2
+    while a>0:
+        if a*factor >= b:
+            a, b = a*factor - b, b*factor
+            print factor, 
+        factor += 1 
+
+if __name__ == "__main__":
+    while True:
+        try:
+            a = input_int("a = ?")
+            b = input_int("b = ?")
+        except KeyboardInterrupt:
+            print
+            break
+        if a>0 and a<b: 
+            calc_frac(a,b)
+            print
+        else:
+            print "a must be a positive integer less than b"
+ian@minty ~/Dev/python/olimex $ 
+ian@minty ~/Dev/python/olimex $ python fraction_wepc.py 
+a = ? 
+Not a integer dumbass. Try again!
+a = ? 7
+b = ? 11
+2 8 88
+a = ? 3
+b = ? 4
+2 4
+a = ? 8
+b = ? 47
+6 282
+a = ? 8
+b = ? 64
+8
+a = ? ^C
+ian@minty ~/Dev/python/olimex $ 
