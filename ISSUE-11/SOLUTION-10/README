@@ -1,0 +1,117 @@
+
+Python this time. The only limitation is that the "@" symbol cant be the last character on a line (although thats easily fixed...)
+
+I embedded the maze in the code because I grew bored of typing it every time!
+
+Ian K Rolfe
+====================
+ian@minty ~/Dev/python/olimex $ cat maze_wepc.py 
+maze = """
+WWWWWWWWWWWWWWWWWWWWW
+W              @@   W
+WWwwwww         @   W
+W          W    @@  W
+W          W @@     W
+W          W  @     W
+WWWWWWW    WWWWWWWWWW
+W                   W
+W   @  @      WWWWWWW
+W   @@@@  @@        W
+W                   W
+WWWWWWWWWWWWWWWWWWWWW"""
+print maze
+
+class Obstacle(object):
+    def __init__(self, x, y, size):
+        self.x = x
+        self.y = y
+        self.size = size
+        self.parts = None
+
+    def __repr__(self):
+        return "Obstacle(%s,%s, size=%s)"%(self.x,self.y,self.size)
+
+    def createparts(self):
+        self.parts = [[self.x,self.y,self.size]] 
+
+    def join(self, obj):
+        self.size += obj.size
+        self.parts.extend(obj.parts)
+        return
+
+    def adjacent(self, obj):
+        objx1 = obj.x
+        objx2 = obj.x + obj.size -1
+        for partx, party, partsize in self.parts:
+            partx2 = partx + partsize -1
+            if party == obj.y - 1:
+                if (
+                    partx <= objx1 <=partx2 
+                    or partx <= objx2 <= partx2
+                    or objx1 <= partx <= objx2
+                    or objx1 <= partx2 <= objx2):
+                    return True
+        return False
+
+def adjacent(objectlist, obj):
+    # create a list copy to prevent changes to objectlist affecting iterator
+    o = objectlist + []
+    for cand in o:
+        if cand.adjacent(obj):
+            yield cand
+
+def obstacles(ma):
+    obs = []
+    y=1
+    for s in ma:
+        if '@' in s:
+            obj = None
+            for x in xrange(len(s)):
+                if s[x]=='@':
+                    if obj is None:
+                        obj = Obstacle(x,y,1)
+                    else:
+                        obj.size += 1
+                else:
+                    if obj:
+                        obj.createparts()
+                        for a in adjacent(obs,obj):
+                            obs.remove(a)  # remove from objectlist
+                            obj.join(a)    # Add on to exisiting
+                        obs.append(obj)
+                    obj = None
+        y+=1
+    return obs
+
+if __name__=="__main__":
+    amaze = [slice for slice in maze.split('\n') if slice!=""]
+    obs = obstacles(amaze)
+    s =0
+    largest = None
+    for o in obs:
+        print o
+        if o.size > s:
+            largest = o
+            s = o.size
+    print "largest is ",largest
+ian@minty ~/Dev/python/olimex $ python maze_wepc.py 
+
+WWWWWWWWWWWWWWWWWWWWW
+W              @@   W
+WWwwwww         @   W
+W          W    @@  W
+W          W @@     W
+W          W  @     W
+WWWWWWW    WWWWWWWWWW
+W                   W
+W   @  @      WWWWWWW
+W   @@@@  @@        W
+W                   W
+WWWWWWWWWWWWWWWWWWWWW
+Obstacle(16,4, size=5)
+Obstacle(14,6, size=3)
+Obstacle(4,10, size=6)
+Obstacle(10,10, size=2)
+largest is  Obstacle(4,10, size=6)
+ian@minty ~/Dev/python/olimex $ 
+

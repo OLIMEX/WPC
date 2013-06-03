@@ -1,0 +1,12 @@
+Unfortunately all I have time for, away all weekend.
+
+Effectively a one-liner, it does all the work at least:
+
+# A is Adjacent
+# O is Obstacles
+# P is Points
+A = [(x, y) for (x, y) in O for (a, b) in P if abs(x-a) + abs(y-b) == 1]
+
+Have a nice weekend,
+
+Dylan
