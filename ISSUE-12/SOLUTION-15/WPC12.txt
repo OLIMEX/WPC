@@ -1,0 +1,7 @@
+Problem:  Similar words
+
+Similar word are these which differs by one character only i.e. one character changed or inserted or deleted.
+
+For example: if useing this concept the word ¡°hello¡± is considered similar to ¡°hella¡± and to ¡°hell¡± or ¡°shello¡±
+
+Make code which enters word then scans: http://fiction.eserver.org/novels/alice_in_wonderland.html and prints all similar words to the one which is entered.

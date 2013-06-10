@@ -1,0 +1,43 @@
+Hi everyone,
+
+My program with little bit bugs and I can not solve the problem at this momoment.
+
+In most cases it returns correct results.
+
+Such as:
+
+input:
+word
+
+returns:
+world
+words
+work
+worm
+wood
+wore
+
+input:
+an
+
+returns:
+in
+on
+and
+a
+as
+ran
+at
+am
+any
+can
+fan
+man
+pan
+
+But when you input words like "az", "buy", it doesn't work.
+Anyone can figure it out?
+
+Thanks,
+Miller
+
