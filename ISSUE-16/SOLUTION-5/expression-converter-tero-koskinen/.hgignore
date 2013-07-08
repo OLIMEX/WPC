@@ -1,0 +1,8 @@
+syntax: glob
+
+*.swp
+*.class
+*.tokens
+java
+target
+lib

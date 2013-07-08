@@ -1,0 +1,118 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<html>
+<head>
+<script type="text/javascript">
+function pushgo()
+{
+  document.getElementById("teval").value = shunteval(document.getElementById("toks").value) ;
+}
+
+function mathsplit(s)
+{
+ var t = Array();
+ var b = "";
+ var c;
+ var r;
+ for (i=0;i<s.length;i++)
+ {
+   c = s.charAt(i);
+   if ((c=="0")||(c=="1")||(c=="2")||(c=="3")||(c=="4")||(c=="5")||(c=="6")||(c=="7")||(c=="8")||(c=="9"))
+   {
+     b += c;
+   }
+   else if ((c=="+")||(c=="-")||(c=="*")||(c=="/")||(c=="(")||(c==")"))
+   {
+     if (b != "") 
+     {
+       t.push(b);
+       b = "";
+     }
+     t.push(c);
+   }
+ }
+
+ if (b != "") 
+ {
+   t.push(b);
+ }
+
+ return t;
+}
+
+function shunteval(inp)
+{
+ var i;
+ var s;
+ var stack_oper = Array ();
+ var stack_num = Array ();
+ var evalstr = ""
+ 
+// var t = inp.split(" "); 
+ var t = mathsplit(inp); // now t is array that contains tokens
+
+ for(i=0; i<t.length ; i++)
+ { 
+   if (t[i] == '(') // push to stack for operators that keeps operator
+   {
+     stack_oper.push(t[i]);
+   }
+   else if (t[i] == ')') // pop from stack until found ( but not print (
+   {
+      while (stack_oper.length > 0)
+      {
+         if ((s=stack_oper.pop()) != '(') 
+         {
+           stack_num.push(s); 
+         }
+      }
+   }
+   else if (t[i] == "+" || t[i] == "-" || t[i] == "*" || t[i] == "/")
+   {
+     if (stack_oper.length > 0)
+     {
+        if ((t[i] == "+" || t[i] == "-") && ((stack_oper[stack_oper.length-1]) != '('))
+        {
+           stack_num.push(stack_oper.pop());
+        } 
+     }
+     // push that operator to stack for operators
+     stack_oper.push(t[i]);
+   }
+   else 
+   {
+     stack_num.push(t[i]);
+   }
+ } 
+
+
+ while (stack_oper.length > 0)
+ {
+   stack_num.push(stack_oper.pop());
+ }
+
+ for (i=0;i<stack_num.length;i++)
+ {
+   evalstr = evalstr + stack_num[i] + " ";
+ }
+
+ return evalstr;
+}
+
+
+
+</script>
+</head>
+<body>
+
+
+<div><input style="width:600px;" id="toks" type="text" value="( 10 + 20 ) / ( 30 - 40 )" /></div>
+<button type="button" onclick="pushgo()">Go</button>
+<div><input style="width:600px;" id="teval" type="text" value="" /></div>
+<hr />
+
+<p>http://en.wikipedia.org/wiki/Shunting-yard_algorithm</p>
+<p>My old code http://pastebin.com/N17m5FVz</p>
+
+</body>
+</html> 
+

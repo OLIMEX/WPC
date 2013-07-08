@@ -14,3 +14,5 @@ Solutions:
 2. OhmOhm, Python
 
 3. Antal Koos, Python
+
+4. Todor Nikodimov - C++
