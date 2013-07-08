@@ -36,3 +36,5 @@ Solutions:
 10. Miller Wang - C++
 
 11. Stefan Petersen - C
+
+12. Richard Park - Python
