@@ -130,51 +130,31 @@ main(int argc, char *argv[])
 	case ' ':
 	    break;
 	case '+':
-#if 1
 	    if (token == TOKEN_NUMBER) {
 		printf("%d ", number);
 		number = 0;
 	    }
-#else
-	    printf("%d ", number);
-	    number = 0;
-#endif
 	    push_or_print(TOKEN_PLUS);
 	    break;
 	case '-':
-#if 1
 	    if (token == TOKEN_NUMBER) {
 		printf("%d ", number);
 		number = 0;
 	    }
-#else
-	    printf("%d ", number);
-	    number = 0;
-#endif
 	    push_or_print(TOKEN_MINUS);
 	    break;
 	case '*':
-#if 1
 	    if (token == TOKEN_NUMBER) {
 		printf("%d ", number);
 		number = 0;
 	    }
-#else
-	    printf("%d ", number);
-	    number = 0;
-#endif
 	    push_or_print(TOKEN_MULT);
 	    break;
 	case '/':
-#if 1
 	    if (token == TOKEN_NUMBER) {
 		printf("%d ", number);
 		number = 0;
 	    }
-#else
-	    printf("%d ", number);
-	    number = 0;
-#endif
 	    push_or_print(TOKEN_DIV);
 	    break;
 	case '(': /* Parenthesis requires special attention */
