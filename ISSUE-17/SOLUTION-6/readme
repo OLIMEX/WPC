@@ -1,0 +1,7 @@
+Hi,
+Find attached my solution in PHP.It consists of 2 functions, where each implementation is one line.The decoder is the important one. The encoder makes use of the decoder.
+The function requires 2 arguments: the  perimeter and the message string.The  perimeter indicates the number of characters that can be written over onewinding of the strip around the rod.
+The result for a perimeter of 4 characters:
+\php>php skytale.phpMsg: This is the implementation of skytale for the olimex weekend challengeEnc: Teeehn eitfksaoe trnii dsot  nhct ehho aefol  llisiemkmnpyegltxeea  mlwDec: This is the implementation of skytale for the olimex weekend challenge
+
+Kind regards,Kris Godart 		 	   

@@ -1,0 +1,15 @@
+Simple PHP coding to solve your problem:
+
+1) ./skytale-enc.php diameter cleartext
+will encode the "cleartext" using skytale. the solution is simple and based
+on str_split. it also pads the last block so it can be decrypted nicely.
+2) ./skytale-dec.php diameter encryptedtext
+will decode the "encryptedtext" using skytale. the same as above (the
+scripts are mirrored images).
+for a total of 330 bytes =)
+
+Bogdanel.
+
+
+-- 
+Bogdan Dobrica
