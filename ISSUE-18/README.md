@@ -19,3 +19,7 @@ remember we have just serial in and serial out streams no fancy colors, no graph
 Solutions:
 ===
 
+1. Antal Koos - C
+
+2. TOdor Nikodimov - C
+
