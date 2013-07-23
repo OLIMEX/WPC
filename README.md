@@ -14,97 +14,97 @@ RANKING
 =======
 The ranking below is based purely by the number of solutions submited, last updated including ISSUE-18 solutions:
 
-Antal Koos	17
-Miller Wang	15
-Dylan	10
-Mateusz Klatecki	8
-OhmOhm	8
-Piotr Gapinski	8
-Michael Zucchi	7
-Todor Nikodimov	7
-Ian K Rolfe	6
-Nigel Mollett	6
-Emilio Lopez	5
-Hanspeter Portner	5
-Hendrik Lipka	5
-Emiliano Daddario	4
-Lukasz Pulka	4
-Erich Stoehr	3
-Francesco Frassinelli	3
-st0le	3
-Svetlin Zarev	3
-Damu	2
-Dirk Porsche	2
-Dusk	2
-Iain Cunningham	2
-Marek Vasut	2
-Paul Callaghan	2
-Petko Bordjukov	2
-Petr Konecny	2
-Ping Panter	2
-Richard Jacquier	2
-Richard Park	2
-Tomas Puplausks	2
-Alexios Chouchoulas	1
-Andras Reuss	1
-Andrey E	1
-Atanas Bachvaroff	1
-Aziz DEMIREZEN	1
-Benjamin Lutz	1
-Bogdan Dobrica	1
-Bogdan Marinescu	2
-Bradley	1
-Cleopatra A Glider	1
-Davide Silvestri	1
-delpart	1
-Diego Roversi	1
-Dimitar Tomov	1
-Ed March	1
-Eduard Bolos	1
-Elena of Valhalla	1
-Emilio Moretti	1
-Fabian Ebenhoch	1
-Felix MArtin	1
-Gabor Feher	1
-Georgi Genov	1
-Greg Fenton	1
-Grillo	1
-Ivan Lulchev	1
-Joh	1
-Johannes Ebner	1
-Johannes Lummel	1
-Jordan	1
-Konstantinos Agiannis	1
-Kostas Jakeliunas	1
-Kris Godart	1
-Krisztian Nemet	1
-Luca Dentella	1
-Mateusz Matuszewski	1
-Michal Ignatowicz	1
-Mike Brown	1
-Mikhail Soloviev	1
-Mogens Lundholm	1
-Myseri Slave	1
-Nicolas Aguirre	1
-Niki Qnakiev	1
-pyhton-noob	1
-Sebastian Plamauer	1
-SILC	1
-Simon Meaden 	1
-Sinan Zikri 	2
-Sonja Kopf	1
-Stanimir Petev	1
-Stefan Petersen 	1
-Stefan Steininger	1
-Stepa Alimov	1
-Stephen Cantini	1
-Stoyan Dokov	1
-Tero Koskinen 	1
-thewyliestcoyote	1
-Tiago Costa	1
-Tinti	1
-Tobias Hulsdau	1
-Tupfer	1
-Vasil Kalkov	1
-Wim Lewis 	1
-Zokier	1
+Antal Koos	17<br>
+Miller Wang	15<br>
+Dylan	10<br>
+Mateusz Klatecki	8<br>
+OhmOhm	8<br>
+Piotr Gapinski	8<br>
+Michael Zucchi	7<br>
+Todor Nikodimov	7<br>
+Ian K Rolfe	6<br>
+Nigel Mollett	6<br>
+Emilio Lopez	5<br>
+Hanspeter Portner	5<br>
+Hendrik Lipka	5<br>
+Emiliano Daddario	4<br>
+Lukasz Pulka	4<br>
+Erich Stoehr	3<br>
+Francesco Frassinelli	3<br>
+st0le	3<br>
+Svetlin Zarev	3<br>
+Damu	2<br>
+Dirk Porsche	2<br>
+Dusk	2<br>
+Iain Cunningham	2<br>
+Marek Vasut	2<br>
+Paul Callaghan	2<br>
+Petko Bordjukov	2<br>
+Petr Konecny	2<br>
+Ping Panter	2<br>
+Richard Jacquier	2<br>
+Richard Park	2<br>
+Tomas Puplausks	2<br>
+Alexios Chouchoulas	1<br>
+Andras Reuss	1<br>
+Andrey E	1<br>
+Atanas Bachvaroff	1<br>
+Aziz DEMIREZEN	1<br>
+Benjamin Lutz	1<br>
+Bogdan Dobrica	1<br>
+Bogdan Marinescu	2<br>
+Bradley	1<br>
+Cleopatra A Glider	1<br>
+Davide Silvestri	1<br>
+delpart	1<br>
+Diego Roversi	1<br>
+Dimitar Tomov	1<br>
+Ed March	1<br>
+Eduard Bolos	1<br>
+Elena of Valhalla	1<br>
+Emilio Moretti	1<br>
+Fabian Ebenhoch	1<br>
+Felix MArtin	1<br>
+Gabor Feher	1<br>
+Georgi Genov	1<br>
+Greg Fenton	1<br>
+Grillo	1<br>
+Ivan Lulchev	1<br>
+Joh	1<br>
+Johannes Ebner	1<br>
+Johannes Lummel	1<br>
+Jordan	1<br>
+Konstantinos Agiannis	1<br>
+Kostas Jakeliunas	1<br>
+Kris Godart	1<br>
+Krisztian Nemet	1<br>
+Luca Dentella	1<br>
+Mateusz Matuszewski	1<br>
+Michal Ignatowicz	1<br>
+Mike Brown	1<br>
+Mikhail Soloviev	1<br>
+Mogens Lundholm	1<br>
+Myseri Slave	1<br>
+Nicolas Aguirre	1<br>
+Niki Qnakiev	1<br>
+pyhton-noob	1<br>
+Sebastian Plamauer	1<br>
+SILC	1<br>
+Simon Meaden 	1<br>
+Sinan Zikri 	2<br>
+Sonja Kopf	1<br>
+Stanimir Petev	1<br>
+Stefan Petersen 	1<br>
+Stefan Steininger	1<br>
+Stepa Alimov	1<br>
+Stephen Cantini	1<br>
+Stoyan Dokov	1<br>
+Tero Koskinen 	1<br>
+thewyliestcoyote	1<br>
+Tiago Costa	1<br>
+Tinti	1<br>
+Tobias Hulsdau	1<br>
+Tupfer	1<br>
+Vasil Kalkov	1<br>
+Wim Lewis 	1<br>
+Zokier	1<br>
