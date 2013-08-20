@@ -1,0 +1,28 @@
+I. 
+
+As 1-liner:
+
+awk 'BEGIN { RS="[^A-Za-z]" ; split("abcdefghijklmnopqrstuvwxyz",A,"") } $0 { w=tolower($0) ; if(S[w]++) next ; split(w,C,"") ; delete L ; for(c in C) L[C[c]]++ ; W="" ; for(i=1;i<27;i++) if(A[i] in L) for(j=1;j<=L[A[i]];j++) W=W A[i] ; if(X[W]) X[W]=X[W]" "w ; else X[W]=w } END { for(w in X) if(index(X[w]," ")) print X[w] }' pg11.txt
+
+My test data was downloaded from the Gutenberg Project:
+
+http://www.gutenberg.org/cache/epub/11/pg11.txt
+
+
+
+II.
+
+As 1-liner:
+
+awk 'BEGIN { RS="[^A-Za-z]" } $0 { w=tolower($0) ; if(S[w]++) next ; split(w,C,"") ; asort(C) ; W="" ; for(i=1;C[i];i++) W=W C[i] ; if(X[W]) X[W]=X[W]" "w ; else X[W]=w } END { for(w in X) if(index(X[w]," ")) print X[w] }' pg11.txt
+
+My test data was downloaded from the Gutenberg Project:
+
+http://www.gutenberg.org/cache/epub/11/pg11.txt
+
+
+
+Remark: The 1st 1-liner does not use asort(), should run on traditional awk (I used mawk).
+
+The 2nd 1-liner uses asort() which is a GNU-awk extension, so it is kinda nonstandard.
+
