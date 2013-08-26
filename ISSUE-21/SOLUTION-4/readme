@@ -1,0 +1,10 @@
+$ echo 'This is a short test text. Use a different file or other input
+if this test text is too boring.' | mawk 'BEGIN { srand() } { while($0)
+{ if(match($0,"[A-Za-z]+")) { n=RLENGTH ; w=substr($0,RSTART,n) ;
+if(n<4) { printf w } else { split(w,W,"") ; printf W[1] ; e=W[n] ;
+delete W[1] ; delete W[n] ; delete X ; for(i in W) X[rand()]=W[i] ;
+for(i in X) printf X[i] ; printf e } $0=substr($0,RSTART+RLENGTH) } ;
+if(match($0,"[^A-Za-z]+")) { printf substr($0,RSTART,RLENGTH) ;
+$0=substr($0,RSTART+RLENGTH) } } } END { printf "\n" }'
+Tihs is a short test txet. Use a dfifnreet file or oehtr ipunt if tihs
+test text is too bnriog.
