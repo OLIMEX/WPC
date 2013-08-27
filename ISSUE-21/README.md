@@ -38,3 +38,5 @@ Solutions:
 13. Mihail Chilyashev - Ruby
 
 14. Tim Butter - Python
+
+15. Miller Wang - C++
