@@ -1,0 +1,4 @@
+an error which I do quite often  ;-(
+
+for ( int i ; i < 100 ; i++ )
+  func ( i ) ;

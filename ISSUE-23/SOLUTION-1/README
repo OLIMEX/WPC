@@ -1,0 +1,28 @@
+My proposals }:->
+
+#define while if
+
+#define if while
+
+#define if(x) if(rand()<0.0001 && (x))
+
+#define FALSE 1
+
+#define FALSE fork()
+
+#define volatile
+
+#define continue break
+
+#define signed unsigned
+
+#define NULL ((void*)1)
+
+#define free(p) free(p) free(p)
+
+#define free(p)
+
+#define for malloc(sizeof(int)); for
+
+pozdrawiam
+Mateusz Klatecki
