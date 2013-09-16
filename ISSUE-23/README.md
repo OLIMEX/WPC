@@ -1,4 +1,4 @@
-ISSUE #22 - Plagiarism detector
+ISSUE #22 - Evil Code
 ===
 Problem:
 
