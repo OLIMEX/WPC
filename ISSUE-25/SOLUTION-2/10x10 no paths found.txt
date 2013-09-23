@@ -1,0 +1,18 @@
+Olimex Weekend Programming Challenge 25 - 21 Sept 2013
+------------------------------------------------------
+Path length to be found = 9
+
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . B . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+C C C . . . . . . . 
+C A C . . . . . . . 
+C C C . . . . . . . 
+
+Valid paths are shown below
+
+Success!!  Number of paths found = 0
