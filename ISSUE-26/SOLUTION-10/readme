@@ -21,12 +21,12 @@
    "(0,0),(0,0),(1,0),(0,1)"   ;; two points are same
    ))
 
-(define ? (.$ (apply$ +) (map$ *)))
-(define (?? v1 v2) (zero? (? v1 v2)))
-(define (???? x) (? x x))
+(define ⋅ (.$ (apply$ +) (map$ *)))
+(define (⊥? v1 v2) (zero? (⋅ v1 v2)))
+(define (‖⋅‖² x) (⋅ x x))
 (define vec- (map$ -))
 
-(define (?? x)
+(define (□? x)
   (and (= (length x) 4)
        (any boolean
             (map
@@ -35,17 +35,19 @@
                                 (cdr (apply circular-list x))
                                 x)
                  (and (every boolean
-                             (map ?? edges (cdr edges)))
-                      (let1 l (map ???? edges)
+                             (map ⊥? edges (cdr edges)))
+                      (let1 l (map ‖⋅‖² edges)
                         (every equal? l (cdr l))))))
              (permutations* x)))))
 
 (define (process-line s)
-  (let1 f (compose ??
-                   read-from-string
-                   (cute string-append "(" <> ")")
-                   (cute regexp-replace-all #/,/ <> " "))
-    (print s " " (if (f s)  "?" "?"))))
+  (print (if ((.$ □?
+                  read-from-string
+                  (cute string-append "(" <> ")")
+                  (cute regexp-replace-all #/,/ <> " ")) s)
+           "✓" "✗")
+         " "
+         s))
     
 (define (main args)
   (for-each process-line input)
