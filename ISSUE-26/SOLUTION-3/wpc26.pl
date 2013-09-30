@@ -20,4 +20,4 @@ square(A,B,C,D) :-
 distance(A,B,Distance) :-
 	(XA,YA) = A,
 	(XB,YB) = B,
-	Distance is sqrt(((XA - XB) ** 2) + ((YA - YB) ** 2)).
+	Distance is sqrt(((XB - XA) ** 2) + ((YB - YA) ** 2)).
