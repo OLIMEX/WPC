@@ -1,0 +1,16 @@
+Hello.
+
+B-Prolog solution. Four points make square when (1) distances between
+neighboring points are equal and (2) diagonal distances are equal.
+
+| ?- [wpc26].
+consulting::wpc26.pl
+yes
+
+| ?- square((0,0),(0,1),(1,1),(1,0)).
+yes
+
+| ?- square((0,0),(3,4),(8,4),(5,0)).
+no
+
+Piotr.

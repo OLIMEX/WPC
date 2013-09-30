@@ -1,0 +1,36 @@
+/* code style Pcode */
+
+type tuple
+x as double
+y as double
+end type
+
+dim input(3) as tuple
+
+function use(tuple a,tuple b)as double
+use=root(sqr(b.x-a.x)+sqr(b.y-a.y))
+
+function main(array input) as boolean
+small = use(input(0),input(1))
+scount = 1
+big = small
+
+for a= 0 to 2
+for b=(a+1) to 3
+l=use(inout(a),inpout(b))
+if l <= small then
+small = l
+scount += 1
+else
+big = l
+end if
+
+next b
+next a
+
+/* scount will be 5 when all four smaller sides are found */
+/* the bigger side will be the diagonal therefore root(2) when devided by the smaller side */
+
+return( scount=5 and big/small=root(2))
+
+end function

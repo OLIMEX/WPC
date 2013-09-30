@@ -1,0 +1,54 @@
+#!/usr/bin/env gosh
+#| -*- mode: scheme; coding: utf-8; -*- |#
+;; http://olimex.wordpress.com/2013/09/27/\
+;; weekend-programming-challenge-week-26-square/
+;; solution using gauche scheme
+;; http://practical-scheme.net/gauche/
+;; on debian: apt-get install gauche
+(use srfi-1)
+(use util.combinations)
+
+;; input data for squares:
+(define input
+  (list
+   "(0,0),(0,1),(1,1),(1,0)"   ;; normal square
+   "(0,0),(2,1),(3,-1),(1,-2)" ;; not aligned square
+   "(0,0),(1,1),(0,1),(1,0)"   ;; different order of the points
+   ;; input date for non-squares:
+   "(0,0),(0,2),(3,2),(3,0)"   ;; rectangle
+   "(0,0),(3,4),(8,4),(5,0)"   ;; rhombus
+   "(0,0),(0,0),(1,1),(0,0)"   ;; three points are same
+   "(0,0),(0,0),(1,0),(0,1)"   ;; two points are same
+   ))
+
+(define ? (.$ (apply$ +) (map$ *)))
+(define (?? v1 v2) (zero? (? v1 v2)))
+(define (???? x) (? x x))
+(define vec- (map$ -))
+
+(define (?? x)
+  (and (= (length x) 4)
+       (any boolean
+            (map
+             (lambda(x)
+               (let1 edges (map vec-
+                                (cdr (apply circular-list x))
+                                x)
+                 (and (every boolean
+                             (map ?? edges (cdr edges)))
+                      (let1 l (map ???? edges)
+                        (every equal? l (cdr l))))))
+             (permutations* x)))))
+
+(define (process-line s)
+  (let1 f (compose ??
+                   read-from-string
+                   (cute string-append "(" <> ")")
+                   (cute regexp-replace-all #/,/ <> " "))
+    (print s " " (if (f s)  "?" "?"))))
+    
+(define (main args)
+  (for-each process-line input)
+  (until (read-line) eof-object? => s
+         (process-line s))
+  0)
