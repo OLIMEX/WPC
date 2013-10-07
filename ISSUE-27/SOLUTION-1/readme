@@ -1,0 +1,22 @@
+Hello,
+
+Attached is my entry for the #27 weekend programming challenge.
+
+The program was written in Free Pascal and uses OpenGL to render the 
+calculated flight path (with and without air resistance). A short video 
+illustrates the output of the program.
+
+Parameters used by the program are:
+     Mass of the object in kg
+     Initial force in N
+     Time interval in seconds during which initial force was applied
+     Elevation of starting position in m
+     Launch angle in rad
+     Gravitational acceleration in m/s^2
+     Frontal surface area of object in m^2
+     Drag coefficient of the object (dimensionless constant)
+     Air density in kg/m^3
+
+Kind regards,
+
+Marc
