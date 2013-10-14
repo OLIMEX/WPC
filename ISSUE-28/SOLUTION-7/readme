@@ -1,0 +1,20 @@
+Hi there.  Attached is my try at a Sudoku solver.  It takes an ASCII
+file as an input with '.' for the blank cell and optional comment
+lines.  It outputs the first found solution and gives a basic
+benchmark of the number of updates tried per second.
+
+The source is at:
+ https://juju.net.nz/src/hacks.git/tree/sudoku
+
+including some test boards.
+
+Some basic benchmarks:
+
+Feroceon 88FR131 / 2.0 GHz ARMv5 / GCC 4.6.3: 16.0 M/s
+i.MX6 Quad / 1.0 GHz Cortex-A9 / GCC 4.7.3: 14.4 M/s
+Core 2 P8600 / 2.4 GHz Core 2 / GCC 4.7.3: 54.2 M/s
+
+It'd be pretty easy to make this multi-threaded - find the first cell
+and spawn a thread to check each solution from there down.
+
+-- Michael
