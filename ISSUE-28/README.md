@@ -21,7 +21,7 @@ Solutions:
 
 3. OhmOhm - Python
 
-4. Marc Corthout - C
+4. Marc  - C
 
 5. Nigel Mollett - C#
 
