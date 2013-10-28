@@ -1,0 +1,21 @@
+Hello.
+
+Prolog solution.
+
+?- [wpc30].
+% wpc30 compiled 0.00 sec, 2,224 bytes
+true.
+
+?- conv(7).
+VII
+true.
+
+?- conv(77).
+LXXVII
+true.
+
+?- conv(777).
+DCCLXXVII
+true.
+
+Piotr.

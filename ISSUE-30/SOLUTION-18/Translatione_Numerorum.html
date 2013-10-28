@@ -1,0 +1,160 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<HTML>
+<HEAD>
+<TITLE>TRANSLATIONE NUMERORUM</TITLE>
+
+<script type="text/javascript">
+
+
+function CONVERSIONEM_VETUS(numera)
+{
+
+ if(numera < 1) { return("NIHILO"); }
+ numera_localiter = numera;
+ numera_retrorsum = "";
+
+ do
+ {
+  if     (numera_localiter >= 1000){numera_retrorsum = numera_retrorsum + "M";   numera_localiter = numera_localiter -1000;}
+  else if(numera_localiter >=  500){numera_retrorsum = numera_retrorsum + "D";   numera_localiter = numera_localiter - 500;}
+  else if(numera_localiter >=  100){numera_retrorsum = numera_retrorsum + "C";   numera_localiter = numera_localiter - 100;}
+  else if(numera_localiter >=   50){numera_retrorsum = numera_retrorsum + "L";   numera_localiter = numera_localiter -  50;}
+  else if(numera_localiter >=   10){numera_retrorsum = numera_retrorsum + "X";   numera_localiter = numera_localiter -  10;}
+  else if(numera_localiter >=    5){numera_retrorsum = numera_retrorsum + "V";   numera_localiter = numera_localiter -   5;}
+  else                             {numera_retrorsum = numera_retrorsum + "I";   numera_localiter = numera_localiter -   1;}
+ } while (numera_localiter >     0);
+  
+ return(numera_retrorsum);
+
+}
+
+function CONVERSIONEM_NOVUM(numera)
+{
+  
+ if(numera < 1) { return("NIHILO"); }
+ numera_localiter = numera;
+ numera_retrorsum = "";
+
+ do
+ {
+  if     (numera_localiter >= 1000){numera_retrorsum = numera_retrorsum + "M";   numera_localiter = numera_localiter -1000;}
+  else if(numera_localiter >=  900){numera_retrorsum = numera_retrorsum + "CM";  numera_localiter = numera_localiter - 900;}
+  else if(numera_localiter >=  500){numera_retrorsum = numera_retrorsum + "D";   numera_localiter = numera_localiter - 500;}
+  else if(numera_localiter >=  400){numera_retrorsum = numera_retrorsum + "CD";  numera_localiter = numera_localiter - 400;}
+  else if(numera_localiter >=  100){numera_retrorsum = numera_retrorsum + "C";   numera_localiter = numera_localiter - 100;}
+  else if(numera_localiter >=   90){numera_retrorsum = numera_retrorsum + "XC";  numera_localiter = numera_localiter -  90;}
+  else if(numera_localiter >=   50){numera_retrorsum = numera_retrorsum + "L";   numera_localiter = numera_localiter -  50;}
+  else if(numera_localiter >=   40){numera_retrorsum = numera_retrorsum + "XL";  numera_localiter = numera_localiter -  40;}
+  else if(numera_localiter >=   10){numera_retrorsum = numera_retrorsum + "X";   numera_localiter = numera_localiter -  10;}
+  else if(numera_localiter >=    9){numera_retrorsum = numera_retrorsum + "IX";  numera_localiter = numera_localiter -   9;}
+  else if(numera_localiter >=    5){numera_retrorsum = numera_retrorsum + "V";   numera_localiter = numera_localiter -   5;}
+  else if(numera_localiter >=    4){numera_retrorsum = numera_retrorsum + "IV";  numera_localiter = numera_localiter -   4;}
+  else                             {numera_retrorsum = numera_retrorsum + "I";   numera_localiter = numera_localiter -   1;}
+ } while (numera_localiter >     0);
+  
+ return(numera_retrorsum);
+
+}
+
+function CONVERSIONEM_BREVES(numera)
+{
+  
+ if(numera < 1) { return("NIHILO"); }
+ numera_localiter = numera;
+ numera_retrorsum = "";
+
+ do
+ {
+  if     (numera_localiter >= 1000){numera_retrorsum = numera_retrorsum + "M";   numera_localiter = numera_localiter -1000;}
+  else if(numera_localiter >=  999){numera_retrorsum = numera_retrorsum + "IM";  numera_localiter = numera_localiter - 999;}
+  else if(numera_localiter >=  998){numera_retrorsum = numera_retrorsum + "IIM"; numera_localiter = numera_localiter - 998;}
+  else if(numera_localiter >=  990){numera_retrorsum = numera_retrorsum + "XM";  numera_localiter = numera_localiter - 990;}
+  else if(numera_localiter >=  980){numera_retrorsum = numera_retrorsum + "XXM"; numera_localiter = numera_localiter - 980;}
+  else if(numera_localiter >=  900){numera_retrorsum = numera_retrorsum + "CM";  numera_localiter = numera_localiter - 900;}
+  else if(numera_localiter >=  800){numera_retrorsum = numera_retrorsum + "CCM"; numera_localiter = numera_localiter - 800;}
+  else if(numera_localiter >=  500){numera_retrorsum = numera_retrorsum + "D";   numera_localiter = numera_localiter - 500;}
+  else if(numera_localiter >=  499){numera_retrorsum = numera_retrorsum + "ID";  numera_localiter = numera_localiter - 499;}
+  else if(numera_localiter >=  498){numera_retrorsum = numera_retrorsum + "IID"; numera_localiter = numera_localiter - 498;}
+  else if(numera_localiter >=  490){numera_retrorsum = numera_retrorsum + "XD";  numera_localiter = numera_localiter - 490;}
+  else if(numera_localiter >=  480){numera_retrorsum = numera_retrorsum + "XXD"; numera_localiter = numera_localiter - 480;}
+  else if(numera_localiter >=  400){numera_retrorsum = numera_retrorsum + "CM";  numera_localiter = numera_localiter - 400;}
+  else if(numera_localiter >=  300){numera_retrorsum = numera_retrorsum + "CCM"; numera_localiter = numera_localiter - 300;}
+  else if(numera_localiter >=  100){numera_retrorsum = numera_retrorsum + "C";   numera_localiter = numera_localiter - 100;}
+  else if(numera_localiter >=   99){numera_retrorsum = numera_retrorsum + "IC";  numera_localiter = numera_localiter -  99;}
+  else if(numera_localiter >=   98){numera_retrorsum = numera_retrorsum + "IIC"; numera_localiter = numera_localiter -  98;}
+  else if(numera_localiter >=   90){numera_retrorsum = numera_retrorsum + "XC";  numera_localiter = numera_localiter -  90;}
+  else if(numera_localiter >=   80){numera_retrorsum = numera_retrorsum + "XXC"; numera_localiter = numera_localiter -  80;}
+  else if(numera_localiter >=   50){numera_retrorsum = numera_retrorsum + "L";   numera_localiter = numera_localiter -  50;}
+  else if(numera_localiter >=   49){numera_retrorsum = numera_retrorsum + "IL";  numera_localiter = numera_localiter -  49;}
+  else if(numera_localiter >=   48){numera_retrorsum = numera_retrorsum + "IIL"; numera_localiter = numera_localiter -  48;}
+  else if(numera_localiter >=   40){numera_retrorsum = numera_retrorsum + "XL";  numera_localiter = numera_localiter -  40;}
+  else if(numera_localiter >=   30){numera_retrorsum = numera_retrorsum + "XXL"; numera_localiter = numera_localiter -  30;}
+  else if(numera_localiter >=   10){numera_retrorsum = numera_retrorsum + "X";   numera_localiter = numera_localiter -  10;}
+  else if(numera_localiter >=    9){numera_retrorsum = numera_retrorsum + "IX";  numera_localiter = numera_localiter -   9;}
+  else if(numera_localiter >=    8){numera_retrorsum = numera_retrorsum + "IIX"; numera_localiter = numera_localiter -   8;}
+  else if(numera_localiter >=    5){numera_retrorsum = numera_retrorsum + "V";   numera_localiter = numera_localiter -   5;}
+  else if(numera_localiter >=    4){numera_retrorsum = numera_retrorsum + "IV";  numera_localiter = numera_localiter -   4;}
+  else if(numera_localiter >=    3){numera_retrorsum = numera_retrorsum + "IIV"; numera_localiter = numera_localiter -   3;}
+  else                             {numera_retrorsum = numera_retrorsum + "I";   numera_localiter = numera_localiter -   1;}
+ } while (numera_localiter >     0);
+  
+ return(numera_retrorsum);
+
+
+}
+
+
+function CONVERSIS_OMNIBUS(numera)
+{
+ document.getElementById("NUMERA_I_A"  ).firstChild.data = CONVERSIONEM_VETUS( numera);
+ document.getElementById("NUMERA_II_A" ).firstChild.data = CONVERSIONEM_NOVUM( numera);
+ document.getElementById("NUMERA_III_A").firstChild.data = CONVERSIONEM_BREVES(numera);
+}
+</script>
+
+
+
+
+</HEAD>
+<BODY>
+
+ <FORM NAME="FORMA" ACTION="" >
+  <TABLE BGCOLOR="#DCDCDC" BORDER="5" CELLPADDING="10" CELLSPACEING="0">
+   <TR>
+    <TD COLSPAN=3 ALIGN=CENTER><H1>TRANSLATIONE NUMERORUM</H1>
+     Institutum enim conversionem Indica formabis normalis numero in forma.
+    </TD>
+   </TR>
+   <TR height="1" BORDER=0>
+     <TD COLSPAN=1 ALIGN=RIGHT><INPUT TYPE="TEXT" NAME="NUMERA" SIZE=10 MAXLENGTH=4></TD>
+     <TD COLSPAN=1 ALIGN=LEFT ><INPUT TYPE="BUTTON" VALUE="Convoco" ONCLICK="CONVERSIS_OMNIBUS(document.FORMA.NUMERA.value)"></TD>
+     <TD ROWSPAN=2 VALIGN=CENTER WIDTH="35%"><H3>Quid est illud?</H3>
+     <P>Lorem ipsum dolor sit amet mundo huius temporis figura intelligi ab India.&nbsp;&THORN;</P>
+    </TD>
+   </TR>
+   <TR>
+    <TD VALIGN=TOP COLSPAN=2>Ingreditur De Numeris Alienis Convertet Eos. Numeri Eam Procedunt Usque Ad Decem Millia</TD>
+   </TR>
+   <TR>
+    <TD COLSPAN=1 ALIGN=RIGHT BGCOLOR="LIGHTGREEN" ><PRE ID="NUMERA_I_A"  >NIHILO</PRE></TD>
+    <TD COLSPAN=1 >Simplex Addens Romanis Fecit</TD>
+    <TD ROWSPAN=3 VALIGN=TOP><H3>Quid multipliciter?</H3>
+      Numeris Romanis Numquam Notatio Saeculorum Decursu Mutatur, Nec Etiam Convenire.
+    </TD>
+   </TR>
+   <TR>
+    <TD COLSPAN=1 ALIGN=RIGHT BGCOLOR="LIGHTGREEN" ><PRE ID="NUMERA_II_A" fa>NIHILO</PRE></TD>
+    <TD COLSPAN=1 >Moderni (A Medio Aevo) Subtractionis Notatio</TD>
+   </TR>
+   <TR>
+    <TD COLSPAN=1 ALIGN=RIGHT BGCOLOR="LIGHTGREEN" ><PRE ID="NUMERA_III_A">NIHILO</PRE></TD>
+    <TD COLSPAN=1 >Abductione Notatio Maximum Brevi</TD>  <!--  <TD COLSPAN=1 >Subtractive Transformationem Quam Fecerunt Romani</TD> -->
+   </TR>
+   <TR>
+    <TD COLSPAN=3 ALIGN=RIGHT>Effingo lima legalis &copy; H.Franke MMXIII</TD>
+   </TR>
+  </table>
+ </form>
+
+</BODY>
+</HTML>
