@@ -1,0 +1,17 @@
+Hello.
+
+wpc31 run-length encoder/decoder.
+Prolog solution (b-prolog, swi).
+
+ ?- [wpc31].
+ consulting::wpc31.pl
+
+ ?- rle("ooollimeexxx").
+ 3o2l1i1m2e3x
+ yes
+
+ ?- rld("3o2l1i1m2e3x").
+ ooollimeexxx
+ yes
+
+Piotr.

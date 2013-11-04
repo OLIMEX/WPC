@@ -1,0 +1,46 @@
+Dear sirs/madams,
+
+I was playing around with the new Renesas RX111 chip
+and GCC when I saw this contest.
+
+As the chip has instructions similar tot memcpy() and
+memset() I tried to make two efficient routines for RLE.
+
+My version (de)compresses Byte streams, starting each
+"chunk" with a count Byte meaning:
+
+	0: end of compressed stream
+	< 0: - count   uncompressed data Bytes follow after count
+	> 0: 1+count samples of the next Byte were in original data
+
+My routines are efficient because of the code size:
+
+	38 program Bytes for the decoder
+	75 program Bytes for the encoder
+
+The total program size needed for encoding and decoding routines is
+therefore only 113 Bytes, excluding calls.
+
+II started out with C-routines, using about 200 Bytes of program code,
+but then I saw how easy the assembly-interface is at:
+
+	http://www.kpitgnutools.com/manuals/RX-ABI-Specification.html
+
+I played around with the registers and came up with simple
+#define-commands to have named variables, and used only C-comments.
+The test program and data are written in C.
+
+I have tested all 32 combinations:
+
+	end of data:		yes/no
+	empty chunk:		yes/no
+	repeat data:		yes/no
+	chunk type change:	yes/no (with and without shortening)
+	index length exceeded:	yes/no
+
+I am very excited to see if someone managed to use less program code,
+maybe using another strategy for the count/data coding.
+
+Best regards,
+
+Robert van Lierop

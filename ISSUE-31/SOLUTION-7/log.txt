@@ -1,0 +1,9 @@
+C:\tourney\RLE\bin\Debug>rle c sasasasasas
+-11sasasasasas
+C:\tourney\RLE\bin\Debug>rle D -11sasasasasas
+sasasasasas
+C:\tourney\RLE\bin\Debug>rle  C cfgwwwwwwwwwwrrrrrgggggrtyssss
+-3cfg10w5r5g-3rty4s
+C:\tourney\RLE\bin\Debug>rle d -3cfg10w5r5g-3rty4s
+cfgwwwwwwwwwwrrrrrgggggrtyssss
+C:\tourney\RLE\bin\Debug>

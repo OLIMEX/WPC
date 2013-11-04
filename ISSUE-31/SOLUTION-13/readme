@@ -1,0 +1,21 @@
+Hello,
+
+Attached are my solutions to WPC #31.
+
+One version is written in Haskell and the other one in C.
+Both versions are functionally identical (I have used them to test each 
+other).
+The C version is faster than the Haskell one, but perhaps less easier 
+to read.
+
+Both programs implement run-length encoding and decoding of a file in 
+one of two ways:
+- by writing n b where n is the repeat count and b the byte to be 
+repeated
+- by writing b if byte b is not repeated or b b n if byte b is repeated 
+n times
+The second version is obviously better to compress fairly random data.
+
+Best regards,
+
+Marc
