@@ -1,0 +1,34 @@
+Hello.
+
+BProlog solution. I think that script do not exactly does what should. It
+requires panel dimensions and width and heigt of the boards. As a result
+script displays width of the boards an height (relative to bottom edge).
+
+| ?- [wpc32].
+consulting::wpc32.pl
+yes
+
+| ?- go((300,100)).
+board 60,40 x:<0,60> y:+40
+board 60,40 x:<0,60> y:+40
+board 60,40 x:<60,120> y:+40
+board 40,40 x:<60,100> y:+40
+board 40,40 x:<100,140> y:+40
+board 20,20 x:<0,20> y:+20
+board 20,20 x:<20,40> y:+20
+board 20,20 x:<40,60> y:+20
+board 20,20 x:<60,80> y:+20
+yes
+
+| ?- go((200,200)).
+board 60,40 x:<0,60> y:+40
+board 60,40 x:<0,60> y:+40
+board 60,40 x:<0,60> y:+40
+board 40,40 x:<0,40> y:+40
+board 40,40 x:<0,40> y:+40
+board 20,20 x:<40,60> y:+20
+board 20,20 x:<40,60> y:+20
+board 20,20 x:<40,60> y:+20
+board 20,20 x:<40,60> y:+20
+
+Piotr.

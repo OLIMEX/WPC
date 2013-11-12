@@ -1,0 +1,19 @@
+todorp@dantooine:~/test/tourney/panel/bin/Debug$ ./panel < in.txt 
+x=3,y=4,d=1,input number=4
+x=1,y=2,d=1,input number=3
+x=2,y=2,d=1,input number=2
+x=1,y=1,d=1,input number=1
+
+decision  =  20
+
+4 4 4 4 * * * * * * 
+4 4 4 4 * * * * * * 
+4 4 4 4 * * * * * * 
+3 3 2 2 * * * * * * 
+1 * 2 2 * * * * * * 
+* * * * * * * * * * 
+* * * * * * * * * * 
+* * * * * * * * * * 
+* * * * * * * * * * 
+* * * * * * * * * *
+todorp@dantooine:~/test/tourney/panel/bin/Debug$ 
