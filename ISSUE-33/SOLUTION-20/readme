@@ -1,0 +1,12 @@
+Hello,
+
+I'm sending you an solution of week #33 problem.
+
+In Clojure program language - 21 chars:
+(repeatedly #(rand))
+
+In Ruby program language - 10 chars:
+loop{p 1}
+
+Best regards,
+Zlatan Dimitrov

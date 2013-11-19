@@ -1,0 +1,19 @@
+Hi,
+
+Here is my entry for WPC 33: infinite output:
++[.]
+
+The language is brainfuck and the code above is 4 characters long
+(no newline necessary).
+
+The logic is following:
++    increase value at memory location 0 by 1 (from 0 to 1)
+[    start loop if value at memory location 0 is not 0
+.    print value from memory location 0
+]    go back to [
+
+The program will infinitely print ascii character SOH (0x01 in hex)
+to the standard output.
+
+-- 
+Tero Koskinen

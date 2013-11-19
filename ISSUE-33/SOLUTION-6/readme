@@ -1,0 +1,6 @@
+In a Linux shell (or shell script):
+cat /dev/random
+
+(don't forget to move mouse or create network traffic to create enough
+entropy. Otherwise use 'cat /dev/urandom', but this is 16 instead of 15
+bytes...)

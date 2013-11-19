@@ -1,0 +1,24 @@
+
+My 2-word/6-nibble submission is:
+
+--------------------------------------------
+; http://ww1.microchip.com/downloads/en/DeviceDoc/40001239E.pdf
+;
+http://en.wikipedia.org/wiki/PIC_microcontroller#Baseline_core_devices_.2812_bit.29
+
+0000 001/0 0110 ; MOVWF GPIO
+101/0 0000 0000 ; GOTO 0
+
+.HEX:
+
+:03 0000 00 026A00 (cs)
+--------------------------------------------
+
+This code should work on PIC10F200/202/204/206 (
+http://www.microchip.com/ParamChartSearch/chart.aspx?branchID=1009&mid=10&lang=en&pageId=74)
+- not that I have one available to test on.
+
+
+============================================
+
++[>+]

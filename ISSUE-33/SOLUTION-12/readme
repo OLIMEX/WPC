@@ -1,0 +1,17 @@
+Hi,
+
+
+I'd like to be called "Cae" and my solution is a shell script: >
+	#!/bin/sh
+	yes
+<  3 chars command plus 9 chars (sometimes optional) shebang plus two newlines
+(of  which  the  last  one  may be optional) equals a maximum number of needed
+chars  of  14.   If  you  count  the  "real"  code that you just enter into an
+interpreter, it's 4 chars for "yes\n".
+
+It will output a infinite number of "y\n" lines.
+
+
+Cheers,
+
+	Cae

@@ -1,0 +1,13 @@
+Hi,
+
+This is my submission for the challenge #33 below. The shell script may
+be not portable at all, it's more a joke I found fun to share.
+
+#! /bin/sh
+base64 /dev/urandom
+
+
+--
+Best Regards,
+
+Guillaume

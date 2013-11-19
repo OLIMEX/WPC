@@ -1,0 +1,26 @@
++[.]
+
+
+
+hi,
+
+based on ventosus suggestion for a brainfuck loop with previous Input
+
+Here a 3 Byte solution in Brainfuck -
+
+
+,.]
+
+doesn't stick to standard Brainfuck syntax, but interestling enough it
+works with following bf
+
+bf - h
+
+bf - a Brainfuck interpreter       version 20041219
+(C) 2003, 2004, Stephan Beyer, GPL, s-beyer@gmx.net
+
+
+beef interpreter doesn't allow this glitch
+
+
+best wishes, Georg

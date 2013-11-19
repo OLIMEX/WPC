@@ -1,0 +1,24 @@
+Hi,
+
+My entry is a program for the venerable Intel 4004.  The entirety of the program is a whopping 2 bytes:
+
+000: 04 00	JUN	$000
+
+Of course the output is nothing more than chatter on the processor's address and data lines!  ;-)
+
+To see it in all of its glorious action, do the following:
+
+- go here
+
+- enter "40 00" in the "ROM block:" area
+
+- press the "LOAD" button
+
+- in the "4004 CPU" area, press the "STEP" button and watch in amazement as the "CYCLES" count increases!  Astounding!
+
+
+Thanks,
+Dave
+
+
+
