@@ -1,0 +1,15 @@
+ 2013-11-24 by kantal59
+ License: LGPL
+ OLIMEX WPC#34: POV LED display
+    Persistence of Vision (POV) is made with stripe of LEDs which rotates at 360 degree.
+    If we assume the stripe is with 100 LEDs you can make square “screen” with size approx 140×140 pixels.
+    Make code which converts 140×140 pixels picture to array of LED stripe values for each angle 0-360. 
+    When LED from the stripe are not at exact pixel positions the best way to set their value is to mediate the value 
+    depend on the closest pixel neighbors.
+    
+    
+    1)  ledstripe.py:  Outputs stripes for each angle as lists of the luminous leds
+        usage: $ ./ledstripe.py  xbm_file
+        
+    2)  gled.py: Graphic demo/test for ledstripe.py
+        usage: $ ./gled.py  xbm_file
