@@ -12,7 +12,7 @@ Solutions:
 
 2. Konstantinos Agiannis - C
 
-3. Dimitris Anonimos - Befinge
+3. Dimitris Anonimos - Befunge
 
 4. Tero Koskinen - brainfuck
 
