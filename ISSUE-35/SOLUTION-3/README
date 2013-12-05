@@ -1,0 +1,185 @@
+Edit maze[][] variable in maze.c source to set up input maze.
+Compile source
+  $ gcc -march=native -O3 -s -o maze maze.c
+And run it:
+  $ ./maze
+Program prints the maze and a path in it, if found.
+
+Examples:
+
+2x2 maze
+--------
+
+ **
+ **
+
+ r7
+ LJ
+
+3x3 maze
+--------
+
+ ***
+ ***
+ ***
+No solution
+
+3x3 maze
+--------
+
+ ***
+ * *
+ ***
+
+ r-7
+ | |
+ L-J
+
+4x4 maze
+--------
+
+ ****
+ ****
+ ****
+ ****
+
+ r--7
+ |r-J
+ |L-7
+ L--J
+
+4x4 maze
+--------
+
+ *** 
+ ****
+ ****
+ *** 
+
+ r-7 
+ L7L7
+ rJrJ
+ L-J 
+
+5x5 maze
+--------
+
+ *****
+ ** **
+ ** **
+ *****
+ ** **
+
+ r---7
+ L7 rJ
+ rJ L7
+ |r-7|
+ LJ LJ
+
+7x7 maze
+--------
+
+ *******
+ *******
+ * *****
+ *******
+ **** **
+ *******
+ ** ****
+
+ r7r---7
+ |LJr--J
+ | rJr-7
+ |rJrJrJ
+ |L-J L7
+ |r-7r7|
+ LJ LJLJ
+
+8x8 maze
+--------
+
+ ********
+ ***** **
+ * ******
+ ********
+ *** ****
+ ********
+ ** *****
+ ********
+
+ r7r7r--7
+ |LJLJ rJ
+ | r7r7L7
+ |rJLJL-J
+ |L7 r--7
+ L7L-Jr-J
+ rJ r7L-7
+ L--JL--J
+
+9x9 maze
+--------
+
+ *********
+ *********
+ *********
+ *********
+ **** ****
+ *********
+ *********
+ *********
+ *********
+
+ r-------7
+ |r------J
+ |L------7
+ |r------J
+ |L-7 r--7
+ |r-JrJr-J
+ |L--JrJr7
+ |r7r7L-J|
+ LJLJL---J
+
+10x10 maze
+----------
+
+ **********
+ ******* **
+ * ********
+ **********
+ **** *****
+ **********
+ **********
+ ** **** **
+ **********
+ **** *****
+           
+ r7r7r----7
+ |LJLJr7 rJ
+ | r7rJL7L7
+ |rJLJr7L-J
+ |L-7 |L--7
+ |r7L7L7r-J
+ ||L7L7|L-7
+ || L7LJ rJ
+ |L-7L7r7L7
+ L--J LJL-J
+
+Note: this 10x10 test takes ~2 minutes
+
+11x10 maze
+----------
+ **********
+ ******* **
+ * ********
+ **********
+ **** *****
+ **********
+ **********
+ ** **** **
+ **********
+ **** *****
+ **********
+Path not found
+
+Note: this 11x10 test takes ~15 minutes
+
