@@ -1,0 +1,14 @@
+wpc $ 
+wpc $ ghc Main.hs
+[1 of 1] Compiling Main             ( Main.hs, Main.o )
+Linking Main ...
+wpc $ ./Main
+Enter a string:
+Hello there.
+Output is: # 44 33 555 555 666 0 8 44 33 777 33 1 
+wpc $ ./Main
+Enter a string:
+abcdefghijklmnopqrstuvwxyz .
+Output is: 2 22 222 3 33 333 4 44 444 5 55 555 6 66 666 7 77 777 7777 8 88
+888 9 99 999 9999 0 1 
+wpc $ 
