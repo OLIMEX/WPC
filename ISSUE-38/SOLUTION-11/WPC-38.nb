@@ -1,0 +1,233 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9003,        224]
+NotebookOptionsPosition[      8454,        202]
+NotebookOutlinePosition[      8990,        222]
+CellTagsIndexPosition[      8947,        219]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "An", " ", "entry", " ", "to", " ", 
+     "\"\<Weekend Programming Challenge\[Dash]Week #38 Center of mass\>\"", 
+     "\[IndentingNewLine]", 
+     RowBox[{"http", ":"}]}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"olimex", ".", "wordpress", ".", "com"}], "/", "2013"}], "/",
+         "12"}], "/", "20"}], "/", "weekend"}], "-", "programming", "-", 
+     "challenge", "-", "week", "-", "38", "-", "center", "-", "of", "-", 
+     RowBox[{"mass", "/", "\[IndentingNewLine]", 
+      RowBox[{"Language", ":", " ", 
+       RowBox[{"Mathematica", "\[IndentingNewLine]", "Author"}], ":", " ", 
+       RowBox[{"Daniel", " ", "Chisholm", " ", 
+        RowBox[{
+         RowBox[{"dmc", "@", "danielchisholm"}], ".", "com"}]}]}]}]}]}], 
+   "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Import", " ", "the", " ", "file", " ", "from", " ", "the", " ", "URL", 
+     " ", "given", " ", "in", " ", "the", " ", "blog", " ", "post"}], ",", 
+    " ", 
+    RowBox[{
+     RowBox[{
+     "use", " ", "\"\<Binarize\>\"", " ", "to", " ", "convert", " ", "it", 
+      " ", "to", " ", "a", " ", "strictly", " ", "black"}], "-", "and", "-", 
+     RowBox[{"white", " ", "image"}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"blkandwhiteimg", "=", 
+    RowBox[{"Binarize", "[", 
+     RowBox[{
+     "Import", "@", 
+      "\"\<http://olimex.files.wordpress.com/2013/12/100x100.png\>\""}], 
+     "]"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "get", " ", "the", " ", "image", " ", "data", " ", "as", " ", "an", " ", 
+     "array", " ", "of", " ", "pixel", " ", "values"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"pixels", "=", 
+     RowBox[{"ImageData", "[", "blkandwhiteimg", "]"}]}], ";", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "now", " ", "I", " ", "have", " ", "a", " ", "100", "x100", " ", 
+        "array"}], ";", " ", 
+       RowBox[{"value", " ", "=", " ", 
+        RowBox[{"1", " ", "for", " ", "white"}]}]}], ",", " ", 
+      RowBox[{"0", " ", "for", " ", "black"}]}], "*)"}], 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "Generate", " ", "an", " ", "array", " ", "of", " ", "coords", " ", 
+        "where", " ", "value"}], "=", 
+       RowBox[{"0", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"black", " ", "pixel"}], ")"}], ".", "\[IndentingNewLine]", 
+         "This"}], " ", "coordinate", " ", "system", " ", "runs", " ", "from",
+         " ", "the", " ", "top", " ", "of", " ", "the", " ", "image", " ", 
+        "to", " ", "the", " ", 
+        RowBox[{"bottom", ".", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "1"}], "}"}]}], " ", "is", " ", "top", " ", 
+        "left"}]}], ",", " ", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"100", ",", "100"}], "}"}], " ", "is", " ", "bottom", " ", 
+       "right"}]}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"blackpixelcoords", "=", 
+     RowBox[{"Position", "[", 
+      RowBox[{"pixels", ",", "0"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Just", " ", "about", " ", "done", " ", 
+       RowBox[{"now", ".", "  ", "Take"}], " ", "the", " ", "mean", " ", "of",
+        " ", "the", " ", "coord"}], "-", "values"}], ",", " ", 
+     RowBox[{"and", " ", 
+      RowBox[{"that", "'"}], "s", " ", 
+      RowBox[{"it", "!"}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"cofmcoords", "=", 
+     RowBox[{"Mean", "[", "blackpixelcoords", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<RESULT: coords of centre of mass are\>\"", ",", 
+     RowBox[{"cofmcoords", "//", "N"}]}], "]"}], " ", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"  ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Done", "!!"}], "  ", "Note", " ", "that", " ", "in", " ", 
+        "this", " ", "coord"}], "-", "system"}], ",", " ", 
+      RowBox[{"the", " ", "centre", " ", "of", " ", "image", " ", "is", " ", 
+       RowBox[{"{", 
+        RowBox[{"50.5", ",", "50.5"}]}]}]}], ")"}], " ", "*)"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.596645740503914*^9, 3.596645781634783*^9}, {
+   3.596646009497932*^9, 3.596646011848316*^9}, {3.59664606431249*^9, 
+   3.596646075331683*^9}, {3.596646133160883*^9, 3.596646151987462*^9}, 
+   3.596646184486017*^9, 3.59664623105551*^9, 3.596646273723613*^9, {
+   3.5966471628479977`*^9, 3.5966472738597403`*^9}, {3.596647389258112*^9, 
+   3.596647417845983*^9}, {3.596647515133082*^9, 3.596647534232362*^9}, {
+   3.596647572071643*^9, 3.596647670599333*^9}, {3.59664871915514*^9, 
+   3.5966488993476887`*^9}, {3.5966489328728237`*^9, 3.596648952186985*^9}, {
+   3.596648982950911*^9, 3.596649122605386*^9}, {3.596649200266828*^9, 
+   3.596649375733786*^9}, {3.596649430839221*^9, 3.596649598596843*^9}, 
+   3.596650314374907*^9, {3.596650416585154*^9, 3.59665068015414*^9}, {
+   3.596650739065338*^9, 3.596650747993999*^9}, {3.5966510156890507`*^9, 
+   3.596651016819243*^9}, {3.5966510502718897`*^9, 3.596651078836073*^9}, {
+   3.5966514268957157`*^9, 3.596651474661673*^9}, {3.596651613292527*^9, 
+   3.5966516453249617`*^9}, {3.596656470439856*^9, 3.596656486673079*^9}, {
+   3.5966565734874887`*^9, 3.596656615639324*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzt0kEKwjAQheEoLryGR9Ej1BO0qFuhCtLbW8GFYNPMTF7DGN8PCYQsPiZk
+112byzqEcNuOW9M+9n3fDsfNeDgM93P3ujq914oxxhhj34XPlhcWUb4EPDJF
+gI1JAotECKQRI5BIASNO4JA5A4XMGr+EzBsgJYVAmDQCcERILqZCrJIeMTAW
+RK2YkDJKNYjWcIuoDa+I3tAjTg014tXQIjRoLGDUMYZJ0BhGQE6YgTLGn43h
+/Kk8jeHcEBM0ihi1/CsxkkNIkTxDhGQSIiTbSCoAIcWgiDiDFCYdPMAYY4xV
+1xOCECWh
+    "], {{0, 100}, {100, 0}}, {0, 1},
+    ColorFunction->GrayLevel],
+   BoxForm`ImageTag["Bit", ColorSpace -> Automatic, Interleaving -> None],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->{455., Automatic},
+  ImageSizeRaw->{100, 100},
+  PlotRange->{{0, 100}, {0, 100}}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.596645776270362*^9, 3.596645787831975*^9}, {
+   3.596646056546671*^9, 3.596646075974093*^9}, {3.5966461417297373`*^9, 
+   3.596646152675507*^9}, 3.596646232831956*^9, 3.596646274434361*^9, {
+   3.5966474070752974`*^9, 3.5966474187312613`*^9}, {3.596647526306744*^9, 
+   3.596647535093663*^9}, {3.596647614315638*^9, 3.5966476498753633`*^9}, {
+   3.596648798480035*^9, 3.5966489000180283`*^9}, {3.596648933866062*^9, 
+   3.596648952921558*^9}, {3.596649090891131*^9, 3.596649114814424*^9}, {
+   3.596649473783359*^9, 3.596649486124131*^9}, 3.596649530072773*^9, 
+   3.596649567992762*^9, 3.5966504952281933`*^9, 3.596650681000079*^9, 
+   3.596650748927363*^9, 3.596651476794132*^9, {3.5966566077207603`*^9, 
+   3.596656615641621*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"RESULT: coords of centre of mass are\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"51.35649067090115`", ",", "50.569273521238586`"}], "}"}]}],
+  SequenceForm[
+  "RESULT: coords of centre of mass are", {51.35649067090115, 
+   50.569273521238586`}],
+  Editable->False]], "Print",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.5966491148198557`*^9, {3.59664947378992*^9, 3.596649486128717*^9}, 
+   3.596649530083246*^9, 3.596649567996863*^9, 3.5966504952460117`*^9, 
+   3.5966506810036297`*^9, 3.596650748932539*^9, 3.5966514767985687`*^9, {
+   3.596656607729205*^9, 3.596656615643016*^9}}]
+}, Open  ]]
+},
+WindowSize->{1069, 911},
+WindowMargins->{{Automatic, 170}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{Automatic, Automatic},
+"PostScriptOutputFile"->"/home/dmc/print.pdf"},
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (December 16, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 5687, 129, 605, "Input"],
+Cell[6270, 153, 1489, 29, 470, "Output"],
+Cell[7762, 184, 676, 15, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

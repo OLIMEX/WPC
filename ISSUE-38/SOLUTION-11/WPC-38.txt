@@ -1,0 +1,35 @@
+(* An entry to "Weekend Programming Challenge\[Dash]Week #38 Center \
+of mass"
+http://olimex.wordpress.com/2013/12/20/weekend-programming-challenge-\
+week-38-center-of-mass/
+Language: Mathematica
+Author: Daniel Chisholm dmc@danielchisholm.com
+*)
+
+(*Import the file from the URL given in the blog post, use "Binarize" \
+to convert it to a strictly black-and-white image*)
+blkandwhiteimg = 
+ Binarize[Import@
+   "http://olimex.files.wordpress.com/2013/12/100x100.png"]
+
+(*get the image data as an array of pixel values*)
+pixels = 
+ ImageData[
+  blkandwhiteimg];(* now I have a 100x100 array; value = 1 for white, \
+0 for black*)
+
+(*Generate an array of coords where value=0 (black pixel).
+This coordinate system runs from the top of the image to the bottom.
+{1,1} is top left, {100,100} is bottom right
+*)
+blackpixelcoords = Position[pixels, 0];
+
+(*Just about done now.  Take the mean of the coord-values, and that's \
+it!*)
+cofmcoords = Mean[blackpixelcoords];
+
+Print["RESULT: coords of centre of mass are", cofmcoords // N] 
+
+(*  Done!!  Note that in this coord-system, the centre of image is \
+{50.5,50.5) *)
+
