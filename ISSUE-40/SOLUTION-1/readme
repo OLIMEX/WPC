@@ -1,0 +1,12 @@
+this is in Haskell.
+
+approach: basic breadth-first search on the various possibilities
+
+it will find all solutions (until you ^C it or it runs out of memory),
+with the shortest ones first - and uses Haskell's laziness to output
+results as soon as they are found
+
+use "first_sol 100" to find the first solution, or compile to a binary
+with the GHC compiler
+
+enjoy!
