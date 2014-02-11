@@ -1,0 +1,214 @@
+<html>
+<head>
+<title>Segments</title>
+<script type="text/javascript">
+
+var problem = [];
+var solution = [];
+var used = [];
+
+var pro_count;
+var sol_count;
+
+function next()
+{
+  if (sol_count == pro_count)
+    return 1;
+
+  for (var i = 0; i < pro_count; i++)
+  {
+      if (used[i] == 0)
+      {
+        var flip = -1;
+
+        if ((solution[sol_count-1][2] == problem[i][0]) &&
+            (solution[sol_count-1][3] == problem[i][1]))
+                    flip = 0;
+        else if ((solution[sol_count-1][2] == problem[i][2]) &&
+                 (solution[sol_count-1][3] == problem[i][3]))
+                    flip = 1;
+
+        if (flip >= 0)
+        {
+            if (flip == 0)
+            {
+				solution[sol_count] = problem[i].slice(0); 
+            }
+            else if (flip == 1)
+            {
+                solution[sol_count] = [problem[i][2], 
+							   		   problem[i][3],
+							   		   problem[i][0],
+							   		   problem[i][1]
+							  		  ];
+            }
+            used[i] = 1;
+            sol_count++;
+            if (!next())
+            {
+                used[i] = 0;
+                sol_count--;
+            }
+            else
+                return 1;
+        }
+      }
+  }
+  return 0;
+}
+
+function find_solution()
+{
+    for (var i = 0; i < pro_count; i++)
+    {
+        for (var flip = 0; flip <=1; flip++)
+        {
+            sol_count = 1;
+            
+			if (flip == 0)
+            {
+                solution[0] = problem[i].slice(0);
+            }
+            else
+            {
+                solution[0] = [problem[i][2], 
+							   problem[i][3],
+							   problem[i][0],
+							   problem[i][1]
+							  ];
+            }
+            
+			for (var j = 0; j < pro_count; j++)
+				used[j] = 0;
+            used[i] = 1;
+
+            if (next() == 1)
+            {
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+function solve()
+{
+  var lines = document.getElementById('seginput').value.split("\n");
+  var output = document.getElementById('segoutput');
+  pro_count = 0;
+
+  output.value = '';
+  for(var i = 0; i < lines.length; i++) 
+  {
+	var line = lines[i].replace(/^\s+/,'');
+    line = line.replace(/\s+$/,'');
+	line = line.replace(/[^0-9\s]/g, '');	
+	line = line.replace(/\s{2,}/g, ' ');
+	
+	if (line != '')
+	{
+  	  var numbers = line.split(" ");
+	  if (numbers.length != 4)
+      {
+	    output.value += 'Warning: '+numbers.length+' elements in line '+i+'\n';
+      }
+	  problem[pro_count] = numbers.slice(0,4);
+	  problem[pro_count][0] = parseInt(problem[pro_count][0]);
+	  problem[pro_count][1] = parseInt(problem[pro_count][1]);
+	  problem[pro_count][2] = parseInt(problem[pro_count][2]);
+	  problem[pro_count][3] = parseInt(problem[pro_count][3]);
+      pro_count++;
+    }
+  }
+	
+  draw();
+
+  if (find_solution() == 0)
+  { 
+    for(var i = 0; i < pro_count; i++) 
+    {
+	  output.value += '('+solution[i][0]+','+solution[i][1]+') to ('+
+					      solution[i][2]+','+solution[i][3]+')\n';
+    }
+  }
+  else
+    output.value = 'No solution found';  
+}
+
+function draw()
+{
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) 
+      {
+        var minx = Number.MAX_VALUE;
+        var miny = Number.MAX_VALUE;
+        var maxx = Number.MIN_VALUE;
+        var maxy = Number.MIN_VALUE;
+
+		for (var i = 0; i < pro_count; i++)
+		{
+          if (problem[i][0] < minx) minx = problem[i][0];
+          if (problem[i][0] > maxx) maxx = problem[i][0];
+          if (problem[i][1] < miny) miny = problem[i][1];
+          if (problem[i][1] > maxy) maxy = problem[i][1];
+          if (problem[i][2] < minx) minx = problem[i][2];
+          if (problem[i][2] > maxx) maxx = problem[i][2];
+          if (problem[i][3] < miny) miny = problem[i][3];
+          if (problem[i][3] > maxy) maxy = problem[i][3];
+		}
+
+		var scale_x = canvas.width / (maxx - minx);
+		var scale_y = canvas.height / (maxy - miny);
+        var cscale = Math.min(scale_x, scale_y) * 0.8;
+
+        var ctx = canvas.getContext("2d");
+		ctx.save();
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		ctx.translate(0.1 * canvas.width, 0.9 * canvas.height); 
+		ctx.scale(cscale,-cscale);
+		ctx.lineWidth = 1 / cscale;
+		for (var i = 0; i < pro_count; i++)
+		{ 
+		  ctx.beginPath();
+    	  ctx.moveTo(problem[i][0],problem[i][1]);
+    	  ctx.lineTo(problem[i][2],problem[i][3]);
+    	  ctx.stroke();
+        }
+		ctx.restore();
+      }
+}
+</script>
+</head>
+<body style="font-family: sans-serif; font-size: 0.8em;">
+<br/>
+<p style="font-size: 1em;font-weight: bold;">Olimex WPC 42: no-lift pen drawings.</p>
+<div style="display:inline">	
+		<div style="float:left;width:50%">
+		 	<p>Input:</p>
+		 	<p>Enter lines consisting of four integers separated by a space.</p>
+			<textarea id="seginput" rows="10" cols="30">
+0 0 6 0
+6 0 6 7
+6 7 3 10
+3 10 0 7
+0 7 0 0
+0 7 6 7
+			</textarea>
+		</div>
+		<div style="float:right;width:50%">
+		 	<p>Output:</p>
+		 	<p>The solution, if any can be found.</p>
+			<textarea id="segoutput" rows="10" cols="30" readonly>
+			</textarea>
+		</div>
+</div>
+<input id ="gobutton" type="button" value="Go"/>
+</br>
+<canvas id="canvas" width="300" height="300">
+  Canvas not supported.
+</canvas>
+</body>
+<script type="text/javascript">
+document.getElementById("gobutton").onclick = solve;
+</script>
+</html>
