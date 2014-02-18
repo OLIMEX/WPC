@@ -1,0 +1,17 @@
+C:\tourney\bank\bin\Debug>bank_card_validation.exe
+Input number bank card: 1234567890123456789
+can't fix card type
+
+C:\tourney\bank\bin\Debug>bank_card_validation.exe
+Input number bank card: 6221301234567894
+type of card  China UnionPay active
+type of card  Discover Card active
+
+C:\tourney\bank\bin\Debug>bank_card_validation.exe
+Input number bank card: 4175001234567894
+type of card  Visa active
+type of card  Visa Electron active
+
+C:\tourney\bank\bin\Debug>bank_card_validation.exe
+Input number bank card: 5602231234567892
+type of card  Bankcard no active

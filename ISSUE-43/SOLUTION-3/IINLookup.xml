@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<iin>
+  <range from="34" to="" active="true" luhn="true" length="15" issuer="American Excess"/>
+  <range from="37" to="" active="true" luhn="true" length="15" issuer="American Excess"/>
+  <range from="5610" to="" active="false" luhn="true" length="16" issuer="Bankcard"/>
+  <range from="560221" to="560225" active="false" luhn="true" length="16" issuer="Bankcard"/>
+  <range from="62" to="" active="true" luhn="false" length="16,17,18,19" issuer="China Union Pay"/>
+  <range from="88" to="" active="true" luhn="false" length="16,17,18,19" issuer="China Union Pay"/>
+  <range from="300" to="305" active="true" luhn="true" length="14" issuer="Diners Club Carte Blanche"/>
+  <range from="2014" to="" active="false" luhn="false" length="15" issuer="Diners Club enRoute"/>
+  <range from="2149" to="" active="false" luhn="false" length="15" issuer="Diners Club enRoute"/>
+  <range from="300" to="305" active="true" luhn="true" length="14" issuer="Diners Club International"/>
+  <range from="309" to="" active="true" luhn="true" length="14" issuer="Diners Club International"/>
+  <range from="36" to="" active="true" luhn="true" length="14" issuer="Diners Club International"/>
+  <range from="38" to="39" active="true" luhn="true" length="14" issuer="Diners Club International"/>
+  <range from="54" to="" active="true" luhn="true" length="16" issuer="Diners Club United States and Canada"/>
+  <range from="55" to="" active="true" luhn="true" length="16" issuer="Diners Club United States and Canada"/>
+  <range from="6011" to="" active="true" luhn="true" length="16" issuer="Discover Card"/>
+  <range from="622126" to="622925" active="true" luhn="true" length="16" issuer="Discover Card"/>
+  <range from="637" to="639" active="true" luhn="true" length="16" issuer="InstaPayment"/>
+  <range from="3528" to="3589" active="true" luhn="true" length="16" issuer="JCB"/>
+  <range from="6304" to="" active="true" luhn="true" length="16,17,18,19" issuer="Laser"/>
+  <range from="6706" to="" active="true" luhn="true" length="16,17,18,19" issuer="Laser"/>
+  <range from="6771" to="" active="true" luhn="true" length="16,17,18,19" issuer="Laser"/>
+  <range from="6709" to="" active="true" luhn="true" length="16,17,18,19" issuer="Laser"/>
+  <range from="5018" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="5020" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="5038" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="5612" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="5893" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="6304" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="6759" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="6761" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="6762" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="6763" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="0604" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="6390" to="" active="true" luhn="true" length="12,13,14,15,16,17,18,19" issuer="Maestro"/>
+  <range from="5019" to="" active="true" luhn="true" length="16" issuer="Dankort"/>
+  <range from="50" to="55" active="true" luhn="true" length="16" issuer="MasterCard"/>
+  <range from="6334" to="" active="false" luhn="true" length="16,18,19" issuer="Solo"/>
+  <range from="6767" to="" active="false" luhn="true" length="16,18,19" issuer="Solo"/>
+  <range from="4903" to="" active="false" luhn="true" length="16,18,19" issuer="Switch"/>
+  <range from="4905" to="" active="false" luhn="true" length="16,18,19" issuer="Switch"/>
+  <range from="4911" to="" active="false" luhn="true" length="16,18,19" issuer="Switch"/>
+  <range from="4936" to="" active="false" luhn="true" length="16,18,19" issuer="Switch"/>
+  <range from="564182" to="" active="false" luhn="true" length="16,18,19" issuer="Switch"/>
+  <range from="633110" to="" active="false" luhn="true" length="16,18,19" issuer="Switch"/>
+  <range from="6333" to="" active="false" luhn="true" length="16,18,19" issuer="Switch"/>
+  <range from="6759" to="" active="false" luhn="true" length="16,18,19" issuer="Switch"/>
+  <range from="4" to="" active="true" luhn="true" length="13,16" issuer="Visa"/>
+  <range from="4026" to="" active="true" luhn="true" length="16" issuer="Visa Electron"/>
+  <range from="417500" to="" active="true" luhn="true" length="16" issuer="Visa Electron"/>
+  <range from="4405" to="" active="true" luhn="true" length="16" issuer="Visa Electron"/>
+  <range from="4508" to="" active="true" luhn="true" length="16" issuer="Visa Electron"/>
+  <range from="4844" to="" active="true" luhn="true" length="16" issuer="Visa Electron"/>
+  <range from="4913" to="" active="true" luhn="true" length="16" issuer="Visa Electron"/>
+  <range from="4917" to="" active="true" luhn="true" length="16" issuer="Visa Electron"/>
+  <range from="4506" to="" active="true" luhn="true" length="16" issuer="CIBC Convenience Card"/>
+  <range from="4519" to="" active="true" luhn="true" length="16" issuer="Royal Bank of Canada Client Card"/>
+  <range from="589297" to="" active="true" luhn="true" length="19" issuer="TD Canada Trust Access Card"/>
+  <range from="4536" to="" active="true" luhn="true" length="16" issuer="Scotiabank Scotia Card"/>
+  <range from="500" to="" active="true" luhn="true" length="16" issuer="BMO ABM Card"/>
+  <range from="56" to="" active="true" luhn="true" length="16" issuer="HSBC Canada Card"/>
+</iin>
