@@ -1,0 +1,95 @@
+object MainForm: TMainForm
+  Left = 314
+  Height = 853
+  Top = 158
+  Width = 1245
+  Caption = 'ECG'
+  ClientHeight = 853
+  ClientWidth = 1245
+  LCLVersion = '0.9.30.4'
+  object Chart: TChart
+    Left = 16
+    Height = 784
+    Top = 8
+    Width = 1216
+    AxisList = <    
+      item
+        Title.LabelFont.Orientation = 900
+      end    
+      item
+        Alignment = calBottom
+      end>
+    ExpandPercentage = 5
+    Extent.YMin = -400
+    Extent.XMax = 1024
+    Extent.YMax = 1024
+    Extent.UseXMin = True
+    Extent.UseYMin = True
+    Extent.UseXMax = True
+    Extent.UseYMax = True
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Legend.Visible = True
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    ParentColor = False
+    object RawSeries: TLineSeries
+      Title = 'Raw'
+      LinePen.Color = clRed
+      Pointer.Pen.Color = clRed
+    end
+    object BandSeries: TLineSeries
+      Title = 'Bandpass'
+      LinePen.Color = clBlue
+    end
+    object RectSeries: TLineSeries
+      Title = 'Rectified'
+      LinePen.Color = clFuchsia
+      LinePen.Style = psDot
+    end
+    object AvgSeries: TLineSeries
+      Title = 'Averaged'
+      LinePen.Color = clGreen
+      LinePen.Style = psDash
+    end
+    object DetectSeries: TLineSeries
+      Title = 'Peak detect'
+      LinePen.Color = clTeal
+    end
+    object PeakSeries: TLineSeries
+      Title = 'Peaks'
+      LinePen.Color = clPurple
+      LinePen.Width = 2
+    end
+  end
+  object Button1: TButton
+    Left = 592
+    Height = 25
+    Top = 816
+    Width = 75
+    Caption = 'Go !'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object BPMLabel: TLabel
+    Left = 60
+    Height = 16
+    Top = 818
+    Width = 13
+    Caption = '---'
+    ParentColor = False
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 16
+    Top = 818
+    Width = 36
+    Caption = 'BPM:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+end

@@ -1,0 +1,24 @@
+////////// Packet Format Version 2 ////////////
+
+// 17-byte packets are transmitted from the ModularEEG at 256Hz,
+// using 1 start bit, 8 data bits, 1 stop bit, no parity, 57600 bits per second.
+
+
+struct modeeg_packet
+{
+	uint8_t		sync0;		// = 0xA5
+	uint8_t		sync1;		// = 0x5A
+	uint8_t		version;	// = 2
+	uint8_t		count;		// packet counter. Increases by 1 each packet.
+	uint16_t	data[6];	// 10-bit sample (= 0 - 1023) in big endian (Motorola) format.
+	uint8_t		switches;	// State of PD5 to PD2, in bits 3 to 0.
+};
+
+Or in other words:
+
+	======== ======= ========= ======= ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ==========
+Bytes  |  0xA5	|  0x5A	|   0x02  | 0xXX  | 0xXX | 0xXX | 0xXX | 0xXX | 0xXX | 0xXX | 0xXX | 0xXX | 0xXX | 0xXX | 0xXX | 0xXX |   0xXX   |
+	======== ======= ========= ======= ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ==========
+Meaning| sync0	| sync1	| version |Counter|  Data Ch 0  |  Data Ch 1  |  Data Ch 2  |  Data Ch 3  |  Data Ch 4  |  Data Ch 5  | switches |
+	======== ======= ========= ======= ============= ============= ============= ============= ============= ============= ==========
+
