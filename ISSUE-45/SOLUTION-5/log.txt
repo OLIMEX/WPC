@@ -1,0 +1,20 @@
+root@a20-OLinuXino:/tmp#
+
+root@a20-OLinuXino:/tmp#
+
+root@a20-OLinuXino:/tmp# gcc -o heartbeat heartbeat.c 
+
+root@a20-OLinuXino:/tmp# ./heartbeat 
+
+heartbeat = 74 
+ 
+root@a20-OLinuXino:/tmp# gcc -o medianfilter medianfilter.c 
+
+root@a20-OLinuXino:/tmp# ./medianfilter 
+
+heartbeat  rate = 74 
+
+root@a20-OLinuXino:/tmp# 
+
+
+
