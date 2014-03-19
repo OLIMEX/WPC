@@ -1,0 +1,36 @@
+
+
+hourHandRP12 = 1;
+minuteHandRP12 = 12;
+timesHandsCross = minuteHandRP12 - hourHandRP12;
+hoursBetweenCrossings = 12 / timesHandsCross;
+time = (0:timesHandsCross-1) .* hoursBetweenCrossings;
+timeHours = floor(time)
+timeMinutesSeconds = (time - timeHours) .* 60;
+timeMinutes = floor(timeMinutesSeconds)
+timeSecondsMillis = (timeMinutesSeconds - timeMinutes) .* 60;
+timeSeconds = floor(timeSecondsMillis)
+timeMillis = floor((timeSecondsMillis - timeSeconds) .* 1000)
+
+Output:
+
+timeHours =
+
+     0     1     2     3     4     5     6     7     8     9    10
+
+
+timeMinutes =
+
+     0     5    10    16    21    27    32    38    43    49    54
+
+
+timeSeconds =
+
+     0    27    54    21    49    16    43    10    38     5    32
+
+
+timeMillis =
+
+     0   272   545   818    90   363   636   909   181   454   727
+
+

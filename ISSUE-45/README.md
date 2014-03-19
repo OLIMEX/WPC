@@ -8,7 +8,7 @@ Solutions:
 
 1. Dimitrios Georgios Kontopoulos - Perl/R
 
-2. OhmOhm - PythonC#
+2. OhmOhm - Python
 
 3. Marc - C#
 

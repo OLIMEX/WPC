@@ -1,0 +1,63 @@
+   ______                ____  ___   _____ __________
+  / ____/___  ________  / __ )/   | / ___//  _/ ____/
+ / /   / __ \/ ___/ _ \/ __  / /| | \__ \ / // /
+/ /___/ /_/ / /  /  __/ /_/ / ___ |___/ // // /___
+\____/\____/_/   \___/_____/_/  |_/____/___/\____/
+
+Welcome to CoreBASIC on the STM32-P407.
+Copyright (c) 2004-2014 Rowley Associates Limited.
+
+Program exists in memory.  Core at 168 MHz.  Firmware 1.3.5.
+
+>list
+   10 ' Simple search that searches for zeroes of
+   20 ' t - (12t mod 1) for 0 <= t < 1
+   30 '
+   40 ' Time solution...
+   50 T = TIMER
+   60 PRINT "Commencing search"
+   70 '
+   80 ' Iterate 0 to 1 for t
+   90 T = 0
+  100 WHILE T < 1
+  110   '
+  120   ' Are we close to a zero?
+  130   IF ABS(T - (12 * T) MOD 1) < 5e-05 THEN
+  140     '
+  150     ' Yep, convert to seconds
+  160     S = INT(12 * 3600 * T + 0.5)
+  170     '
+  180     ' Print time
+  190     PRINT TIME$(S)
+  200     '
+  210     ' Step over 1 hour
+  220     T = T + 1 / 12
+  240   ELSE
+  250     '
+  260     ' Try next point
+  270     T = T + 5e-06
+  280   ENDIF
+  290 WEND
+  300 '
+  310 ' Dump how long this took
+  320 PRINT | "Search took "; (TIMER - T) / 1000; " seconds"
+  330 '
+  340 ' Done
+  350 END
+>run
+Commencing search
+00:00:00
+01:05:27
+02:10:54
+03:16:22
+04:21:49
+05:27:16
+06:32:43
+07:38:11
+08:43:38
+09:49:05
+10:54:33
+12:00:00
+
+Search took 0.468917 seconds
+>
