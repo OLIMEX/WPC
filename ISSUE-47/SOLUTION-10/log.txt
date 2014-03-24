@@ -1,0 +1,11 @@
+todorp@todorp-ThinkCentre-M52:~/test/date$ g++ -o dates dates.cpp
+todorp@todorp-ThinkCentre-M52:~/test/date$ ./dates
+input date1 > date2
+input day date1 15
+input month date1 9
+input year date1 1999
+input day date2 23
+input month date2 10
+input year date2 1990
+1999.9.15-1990.10.23=8.10.22
+
