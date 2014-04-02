@@ -1,0 +1,74 @@
+
+Here is my entry for this week, written in Ada:
+
+Best regards
+     Rolf
+
+---------------------------------------------------------------
+--  Olimex Weekend Programming Challenge Week #48 Geometry
+-- 
+--  Problem:
+-- 
+--  Let have three points A(x,y), B(x,y), C(x,y). Make code which
+--  prints if A->B->C sequence makes clockwise, counter clockwise
+--  turn, or A,B,C stay in one line.
+
+--  Algorithm:
+--  1.  draw a straight line from A to B
+--  2a. if C is on the line all three points stay in one line.
+--  2b. if C is on the left side of the line we have to turn ccw.
+--  2c. if C is on the right side of the line we have to turn cw.
+
+--  Put A in the origin (tranlation -A).
+--  Rotate the coordination system such that B is on the positive
+--  X axis.
+--  The Y coordinate of translated and then rotated C indicates the
+--  turning sense.
+
+with Ada.Numerics.Long_Real_Arrays;  use Ada.Numerics.Long_Real_Arrays;
+with Ada.Text_IO;                    use Ada.Text_IO;
+
+procedure Turn_CW_CCW is
+
+   subtype Point_2d is  Real_Vector (1 .. 2);
+   Eps : constant := 1.0E-10;
+
+   -- input
+   A : constant Point_2d := (1.0, 5.0);
+   B : constant Point_2d := (5.0, 0.0);
+   C : constant Point_2d := (9.0, -6.0);
+
+
+   -- move origin into A
+   -- A_D : constant Point_2d := (0.0, 0.0);   -- not needed
+   B_D : constant Point_2d := B - A;
+   C_D : constant Point_2d := C - A;
+
+
+   -- construct rotation matrix
+   Len_AB : constant Long_Float := abs (B_D);
+   Sin_A  : constant Long_Float := - B_D(2) / Len_AB;
+   Cos_A  : constant Long_Float := B_D(1) / Len_AB;
+
+
+   -- rotate C_D by multiplying with rotation matrix
+   -- we only need the y coordinate
+   C_DD_y : constant Long_Float := Sin_A * C_D(1)  +  Cos_A * C_D(2);
+
+begin
+   -- Put_Line ("B': ("&B_D(1)'img&", "&B_D(2)'img&")");
+   -- Put_Line ("C': ("&C_D(1)'img&", "&C_D(2)'img&")");
+   -- Put_Line ("|AB|: " & Len_AB'Img);
+   -- Put_Line ("sin: " & sin_a'Img);
+   -- Put_Line ("cos: " & cos_a'Img);
+   -- Put_Line ("C''_y: " & C_DD_y'Img);
+   if abs (C_DD_y) < Eps then
+      Put_Line ("line");
+   elsif C_DD_Y > 0.0 then
+      Put_Line ("ccw");
+   else
+      Put_Line ("cw");
+   end if;
+end Turn_Cw_Ccw;
+
+

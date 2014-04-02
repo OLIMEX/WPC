@@ -1,0 +1,14 @@
+
+
+compute the signed area of the triangle:
+
+A
+
+if (A>0)
+     print "ClockWise"
+else if (A<0)
+     print "CounterClockWise"
+else
+     print "Aligned"
+
+
