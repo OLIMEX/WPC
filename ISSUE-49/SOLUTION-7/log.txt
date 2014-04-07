@@ -1,0 +1,14 @@
+C:\tourney\easter>easter.exe
+Input year : 2014
+Gregorian : 20.04.2014
+Julian : 7.04.2014
+
+C:\tourney\easter>easter.exe
+Input year : 2013
+Gregorian : 31.03.2013
+Julian : 22.04.2013
+
+C:\tourney\easter>easter.exe
+Input year : 1961
+Gregorian : 2.04.1961
+Julian : 27.03.1961

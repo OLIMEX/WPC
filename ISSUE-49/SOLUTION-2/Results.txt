@@ -1,0 +1,18 @@
+Enter an year : 
+2010
+Western Easter : April 4, 2010
+Orthodox Easter : April 4, 2010
+Do you want to check another year ? (yes/no) 
+yes
+Enter an year : 
+2013
+Western Easter : March 31, 2013
+Orthodox Easter : May 5, 2013
+Do you want to check another year ? (yes/no) 
+yes
+Enter an year : 
+2020
+Western Easter : April 12, 2020
+Orthodox Easter : April 19, 2020
+Do you want to check another year ? (yes/no) 
+no
