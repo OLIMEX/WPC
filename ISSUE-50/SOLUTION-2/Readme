@@ -1,0 +1,32 @@
+
+2014-04-12 by kantal59
+WPC#50: Circle Find
+    In window with size 100 x 100 pixels is drawn solid filled circle with 50 pixels diameter at random coordinates X,Y 
+    but the circle is completely inside the window. Make code which finds the circle XY coordinates.
+    
+   
+    XBM image format is used as input.
+    1) To create test image, use ImageMagick command line utilities:
+    
+        e.g.:   $ convert -size 100x100 xc:white -fill black -draw "circle 49,49,74,49" c1.xbm
+          or:   $ convert -size 100x100 xc:white -fill black -draw "circle 40,30,65,30" c2.xbm
+        
+       See what you created:   $ display c1.xbm         
+        
+        
+    2) cmass.py:    my solution for WPC#38, which is applicable here, too. You can use my 'gmass.py' from WPC#38, too.
+    
+        $ ./cmass.py c1.xbm
+        
+    
+    3) fcircle.py: 
+        Algorithm:  The center must be in the rectangle which has (x,y) corner coordinates:
+                     (R,R), (width-R-1,R), (R,height-R-1), (width-R-1,height-R-1). 
+                    A (cx,cy) point of the rectangle treated as center point 
+                    if (cx,cy), (cx-R,y),(cx+R,y) are black (i.e.: belongs to the circle).
+                    
+        $ ./fcircle.py c1.xbm            
+
+    
+    Note: A perfect circle can not be drawn, the circles have some granularity on the edges.
+          'fcircle.py' doesn't average this granularity, but the 'cmass.py' does it.
