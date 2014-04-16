@@ -56,12 +56,12 @@ so player is always wrong.
 Let have N (3..100) points with X,Y coordinates. Make code which checks if there is circle which to pass through all of them.
 
 
-#####issue10: 
+#####issue10: Fraction reprezentation
 Let 0 < (a/b) <\ 1 where a and b are positive integers. Make program which enters the numbers a and b
 then represent a/b with as sum of numbers 1/n + 1/n2 + 1/n3… and prints the n numbers.
         
         
-#####issue11: 
+#####issue11: Maze and obstacles
 Let's have a maze with size X x Y where X and Y are integer (3..100) .
 The maze is defined with strings, where in the string ‘W’ is wall, ‘@’ is obstacle and ‘ ‘ is air.
 Make code which finds the largest by area connected obstacles in the maze.
