@@ -1,0 +1,4 @@
+C:\tourney\container\bin\Debug>container.exe < in.txt
+packet:1 : 0,2,4
+packet:2 : 0,2,2
+packet:3 : 0,0,0

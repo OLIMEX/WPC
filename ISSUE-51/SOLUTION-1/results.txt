@@ -1,0 +1,255 @@
+Plane Y=0
+i i i i i i i i i i i i i i i i i i i i 
+i i i i i i i i i i i i i i i i i i i i 
+i i i i i i i i i i i i i i i i i i i i 
+i i i i i i i i i i i i i i i i i i i i 
+i i i i i i i i i i i i i i i i i i i i 
+. . . . . . . . . . . . . . . . . . . . 
+c c c c c c c c c c g g g g g g g g g g 
+c c c c c c c c c c g g g g g g g g g g 
+
+Plane Y=1
+j j j j j j j j j j j j j j j j . m m m 
+j j j j j j j j j j j j j j j j . m m m 
+j j j j j j j j j j j j j j j j . m m m 
+j j j j j j j j j j j j j j j j . l l l 
+j j j j j j j j j j j j j j j j . l l l 
+j j j j j j j j j j j j j j j j . l l l 
+c c c c c c c c c c g g g g g g g g g g 
+c c c c c c c c c c g g g g g g g g g g 
+
+Plane Y=2
+j j j j j j j j j j j j j j j j . m m m 
+j j j j j j j j j j j j j j j j . m m m 
+j j j j j j j j j j j j j j j j . m m m 
+j j j j j j j j j j j j j j j j . l l l 
+j j j j j j j j j j j j j j j j . l l l 
+j j j j j j j j j j j j j j j j . l l l 
+c c c c c c c c c c g g g g g g g g g g 
+c c c c c c c c c c g g g g g g g g g g 
+
+Plane Y=3
+a a a a a a a a a a a a k k k k k m m m 
+a a a a a a a a a a a a k k k k k m m m 
+a a a a a a a a a a a a k k k k k m m m 
+a a a a a a a a a a a a k k k k k l l l 
+a a a a a a a a a a a a k k k k k l l l 
+d d d d d d d d d d . . . . . . . l l l 
+d d d d d d d d d d g g g g g g g g g g 
+d d d d d d d d d d g g g g g g g g g g 
+
+Plane Y=4
+a a a a a a a a a a a a h h h h h . . . 
+a a a a a a a a a a a a h h h h h . . . 
+a a a a a a a a a a a a h h h h h . . . 
+a a a a a a a a a a a a h h h h h l l l 
+a a a a a a a a a a a a h h h h h l l l 
+d d d d d d d d d d . . . . . . . l l l 
+d d d d d d d d d d g g g g g g g g g g 
+d d d d d d d d d d g g g g g g g g g g 
+
+Plane Y=5
+a a a a a a a a a a a a h h h h h . . . 
+a a a a a a a a a a a a h h h h h . . . 
+a a a a a a a a a a a a h h h h h . . . 
+a a a a a a a a a a a a h h h h h l l l 
+a a a a a a a a a a a a h h h h h l l l 
+d d d d d d d d d d e e e e . . . l l l 
+d d d d d d d d d d e e e e . . . . . . 
+d d d d d d d d d d e e e e . . . . . . 
+
+Plane Y=6
+a a a a a a a a a a a a h h h h h . . . 
+a a a a a a a a a a a a h h h h h . . . 
+a a a a a a a a a a a a h h h h h . . . 
+a a a a a a a a a a a a h h h h h l l l 
+a a a a a a a a a a a a h h h h h l l l 
+d d d d d d d d d d e e e e . . . l l l 
+d d d d d d d d d d e e e e . . . . . . 
+d d d d d d d d d d e e e e . . . . . . 
+
+Plane Y=7
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . l l l 
+. . . . . . . . . . . . . . . . . l l l 
+d d d d d d d d d d e e e e . . . l l l 
+d d d d d d d d d d e e e e . . . . . . 
+d d d d d d d d d d e e e e . . . . . . 
+
+Boxes that couldn't be fitted are : b, f
+
+Percentage full = 83.0%
+
+================================================================================
+Plane Y=0
+q q q r r r s s s n n n o o o p p p . . 
+q q q r r r s s s n n n o o o p p p . . 
+q q q r r r s s s n n n o o o p p p . . 
+t t t x x x y y y z z z u u u v v v . . 
+t t t x x x y y y z z z u u u v v v . . 
+t t t x x x y y y z z z u u u v v v . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+
+Plane Y=1
+q q q r r r s s s n n n o o o p p p . . 
+q q q r r r s s s n n n o o o p p p . . 
+q q q r r r s s s n n n o o o p p p . . 
+t t t x x x y y y z z z u u u v v v . . 
+t t t x x x y y y z z z u u u v v v . . 
+t t t x x x y y y z z z u u u v v v . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+
+Plane Y=2
+q q q r r r s s s n n n o o o p p p . . 
+q q q r r r s s s n n n o o o p p p . . 
+q q q r r r s s s n n n o o o p p p . . 
+t t t x x x y y y z z z u u u v v v . . 
+t t t x x x y y y z z z u u u v v v . . 
+t t t x x x y y y z z z u u u v v v . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+
+Plane Y=3
+w w w d d d e e e f f f a a a b b b . . 
+w w w d d d e e e f f f a a a b b b . . 
+w w w d d d e e e f f f a a a b b b . . 
+c c c g g g k k k l l l m m m h h h . . 
+c c c g g g k k k l l l m m m h h h . . 
+c c c g g g k k k l l l m m m h h h . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+
+Plane Y=4
+w w w d d d e e e f f f a a a b b b . . 
+w w w d d d e e e f f f a a a b b b . . 
+w w w d d d e e e f f f a a a b b b . . 
+c c c g g g k k k l l l m m m h h h . . 
+c c c g g g k k k l l l m m m h h h . . 
+c c c g g g k k k l l l m m m h h h . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+
+Plane Y=5
+w w w d d d e e e f f f a a a b b b . . 
+w w w d d d e e e f f f a a a b b b . . 
+w w w d d d e e e f f f a a a b b b . . 
+c c c g g g k k k l l l m m m h h h . . 
+c c c g g g k k k l l l m m m h h h . . 
+c c c g g g k k k l l l m m m h h h . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+
+Plane Y=6
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+
+Plane Y=7
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+
+Boxes that couldn't be fitted are : i, j
+
+Percentage full = 50.0%
+
+================================================================================
+Plane Y=0
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+
+Plane Y=1
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+
+Plane Y=2
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+
+Plane Y=3
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+o o o o p p p p n n n n l l l l m m m m 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+t t t t u u u u s s s s q q q q r r r r 
+
+Plane Y=4
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+
+Plane Y=5
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+
+Plane Y=6
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+
+Plane Y=7
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+k k k k d d d d e e e e c c c c a a a a 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+b b b b i i i i j j j j h h h h f f f f 
+
+Boxes that couldn't be fitted are : g
+
+Percentage full = 100.0%
+
+================================================================================
