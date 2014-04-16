@@ -1,0 +1,164 @@
+object Form1: TForm1
+  Left = 314
+  Height = 440
+  Top = 158
+  Width = 706
+  Caption = 'MainForm'
+  ClientHeight = 440
+  ClientWidth = 706
+  OnCreate = FormCreate
+  LCLVersion = '0.9.30.4'
+  object Shape: TShape
+    Left = 16
+    Height = 400
+    Top = 16
+    Width = 400
+    OnPaint = ShapePaint
+  end
+  object RadiusEdit: TEdit
+    Left = 536
+    Height = 25
+    Top = 40
+    Width = 80
+    TabOrder = 0
+    Text = '10'
+  end
+  object Label1: TLabel
+    Left = 448
+    Height = 16
+    Top = 48
+    Width = 79
+    Caption = 'Roller radius:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 448
+    Height = 16
+    Top = 76
+    Width = 41
+    Caption = 'Width:'
+    ParentColor = False
+  end
+  object XWidthEdit: TEdit
+    Left = 536
+    Height = 25
+    Top = 68
+    Width = 80
+    TabOrder = 1
+    Text = '500'
+  end
+  object Label3: TLabel
+    Left = 448
+    Height = 16
+    Top = 104
+    Width = 41
+    Caption = 'Height'
+    ParentColor = False
+  end
+  object YHeightEdit: TEdit
+    Left = 536
+    Height = 25
+    Top = 96
+    Width = 80
+    TabOrder = 2
+    Text = '500'
+  end
+  object Label4: TLabel
+    Left = 448
+    Height = 16
+    Top = 152
+    Width = 13
+    Caption = 'X:'
+    ParentColor = False
+  end
+  object XPosEdit: TEdit
+    Left = 536
+    Height = 25
+    Top = 144
+    Width = 80
+    TabOrder = 3
+    Text = '100'
+  end
+  object Label5: TLabel
+    Left = 448
+    Height = 16
+    Top = 180
+    Width = 8
+    Caption = 'Y'
+    ParentColor = False
+  end
+  object YPosEdit: TEdit
+    Left = 536
+    Height = 25
+    Top = 172
+    Width = 80
+    TabOrder = 4
+    Text = '100'
+  end
+  object Label6: TLabel
+    Left = 448
+    Height = 16
+    Top = 224
+    Width = 13
+    Caption = 'α:'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 448
+    Height = 16
+    Top = 248
+    Width = 13
+    Caption = 'β:'
+    ParentColor = False
+  end
+  object AlphaLabel: TLabel
+    Left = 536
+    Height = 16
+    Top = 224
+    Width = 9
+    Caption = '--'
+    ParentColor = False
+  end
+  object BetaLabel: TLabel
+    Left = 536
+    Height = 16
+    Top = 248
+    Width = 9
+    Caption = '--'
+    ParentColor = False
+  end
+  object Label10: TLabel
+    Left = 624
+    Height = 16
+    Top = 224
+    Width = 21
+    Caption = 'rad'
+    ParentColor = False
+  end
+  object Label11: TLabel
+    Left = 624
+    Height = 16
+    Top = 248
+    Width = 21
+    Caption = 'rad'
+    ParentColor = False
+  end
+  object CalcButton: TButton
+    Left = 511
+    Height = 25
+    Top = 309
+    Width = 85
+    Caption = 'Calc'
+    OnClick = CalcButtonClick
+    TabOrder = 5
+  end
+  object CircleButton: TButton
+    Left = 511
+    Height = 25
+    Top = 360
+    Width = 85
+    Caption = 'Circle demo'
+    OnClick = CircleButtonClick
+    TabOrder = 6
+  end
+end
