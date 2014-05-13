@@ -1,0 +1,129 @@
+object MainForm: TMainForm
+  Left = 314
+  Height = 816
+  Top = 158
+  Width = 994
+  Caption = 'FFT'
+  ClientHeight = 816
+  ClientWidth = 994
+  LCLVersion = '0.9.30.4'
+  object SndChart: TChart
+    Left = 16
+    Height = 248
+    Top = 56
+    Width = 952
+    AxisList = <    
+      item
+        Title.LabelFont.Orientation = 900
+      end    
+      item
+        Alignment = calBottom
+      end>
+    BackColor = clWhite
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    ParentColor = False
+    object SndChartLineSeries1: TLineSeries
+      LinePen.Color = clBlue
+      LinePen.Width = 2
+      Pointer.Pen.Color = clBlue
+      Source = SndChartSource
+    end
+  end
+  object FFTChart: TChart
+    Left = 16
+    Height = 464
+    Top = 336
+    Width = 957
+    AxisList = <    
+      item
+        Title.LabelFont.Orientation = 900
+      end    
+      item
+        Alignment = calBottom
+      end>
+    BackColor = clWhite
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    ParentColor = False
+    object FFTChartLineSeries1: TLineSeries
+      AxisIndexX = 1
+      AxisIndexY = 0
+      LinePen.Color = clBlue
+      LinePen.Width = 2
+      Pointer.Pen.Width = 2
+      Source = FFTChartSource
+    end
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 16
+    Top = 36
+    Width = 25
+    Caption = 'File:'
+    ParentColor = False
+  end
+  object FilenameLabel: TLabel
+    Left = 50
+    Height = 16
+    Top = 36
+    Width = 13
+    Caption = '---'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 16
+    Height = 25
+    Top = 2
+    Width = 75
+    Caption = 'Open'
+    OnClick = FileButtonClick
+    TabOrder = 2
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 16
+    Top = 312
+    Width = 22
+    Caption = 'FFT'
+    ParentColor = False
+  end
+  object Button2: TButton
+    Left = 104
+    Height = 25
+    Top = 2
+    Width = 75
+    Caption = 'Test'
+    OnClick = TestButtonClick
+    TabOrder = 3
+  end
+  object SndChartSource: TListChartSource
+    left = 752
+    top = 104
+  end
+  object FFTChartSource: TListChartSource
+    left = 863
+    top = 344
+  end
+  object FileOpenDialog: TOpenDialog
+    left = 313
+    top = 10
+  end
+  object LogAxisTransformations: TChartAxisTransformations
+    left = 858
+    top = 416
+    object ChartAxisTransformations1LogarithmAxisTransform1: TLogarithmAxisTransform
+      Base = 10
+    end
+  end
+end
