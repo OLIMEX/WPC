@@ -1,0 +1,126 @@
+Sample Random Numbers from 0 to 99
+-------------------------------------
+54 84 78 35 42 24 93 71 81  9 76 57 66 73 64 84 75 29 98 82 
+ 0 84 27 92 92  8 51 16 53 26 26 30 36 79 84 90 55 95 93 34 
+95 53  5 79 67 72 47 62 83 43 16 47 84 99 54 10  1 36 36 81 
+19 30 95 40 36 18 16 31 10 64 65  8 92 47 94 34 25 94 90 17 
+45  9 76 75 43 59 23 39 37 75 14 75 78 53 58 51 66 17 54 31 
+59 97 43 67 81 28 46 17 31 23 26 70 12 63 22 81 37 96 84 68 
+73 47 40 81 89 71 81 24 68 72 46 42 83 41 20 80 45 38 55 16 
+14 28 35  9 64 66 42 27  9 67 39 53 84 58  1 88 37 56 86 83 
+68 84 80 44 81 61 79 70  1 15 72  5 61 40  0  6  6 20 28 75 
+95 27 13  5 42 87 31 44 54 60 39 83 22 68 23  8 53 50 62 63 
+80 50 88 82 96 71  3  0 97 15 72 41 88  8 83 61 72 34 16 88 
+22 80 61 54 53  0 89 11 80 53 52  4 71 84 81 64 40 85 99 80 
+38 82 13 62 99 38 43  4 70 52 14 74 23 67 45 73 54 24 73  5 
+38 89 17 16 61 55 17 94 89 94 44 66 84 34 69 54 17 49 50 72 
+15 15 35 59 17 20 33 75 91 64 58 65 22 46 64 48 35  5 25 70 
+37 11 69 25 92 49  2 77  9 22 76 75 51 85 12  2 63 14 22  6 
+31 37 70 44 16 48 35 72 76 97 70 57 54 18 60 70 37 13 54 22 
+12 88 69 22 26 29 34 85 89 70  4 51 44 70 39 89 45 11 92 12 
+48 71 30 54 40 33 39 69 56 37 95  2 69 51  9 48 42 83 31 65 
+84 93 27 86 94 79 67 82 88 76 97 91 12 47 50 31 82 63 72 65 
+
+
+Distribution
+-------------------------------------
+Value  0 Count 999192
+Value  1 Count 1000929
+Value  2 Count 1000231
+Value  3 Count 1000085
+Value  4 Count 999529
+Value  5 Count 1000748
+Value  6 Count 999331
+Value  7 Count 999472
+Value  8 Count 999832
+Value  9 Count 1000008
+Value 10 Count 1001274
+Value 11 Count 999782
+Value 12 Count 999977
+Value 13 Count 999201
+Value 14 Count 1000321
+Value 15 Count 998964
+Value 16 Count 999477
+Value 17 Count 1000000
+Value 18 Count 1000170
+Value 19 Count 999913
+Value 20 Count 1000209
+Value 21 Count 1000483
+Value 22 Count 1000472
+Value 23 Count 1000459
+Value 24 Count 1000489
+Value 25 Count 999639
+Value 26 Count 1000157
+Value 27 Count 999964
+Value 28 Count 1000389
+Value 29 Count 999781
+Value 30 Count 999644
+Value 31 Count 1000601
+Value 32 Count 1000765
+Value 33 Count 999994
+Value 34 Count 1000239
+Value 35 Count 999679
+Value 36 Count 1001418
+Value 37 Count 999270
+Value 38 Count 999611
+Value 39 Count 1001002
+Value 40 Count 999607
+Value 41 Count 1000054
+Value 42 Count 999932
+Value 43 Count 1000143
+Value 44 Count 999144
+Value 45 Count 999579
+Value 46 Count 999045
+Value 47 Count 1000195
+Value 48 Count 1000094
+Value 49 Count 1000670
+Value 50 Count 1000161
+Value 51 Count 999689
+Value 52 Count 999259
+Value 53 Count 1000302
+Value 54 Count 1000103
+Value 55 Count 999482
+Value 56 Count 1000263
+Value 57 Count 999981
+Value 58 Count 999334
+Value 59 Count 999861
+Value 60 Count 1000135
+Value 61 Count 1000235
+Value 62 Count 999004
+Value 63 Count 999798
+Value 64 Count 1000403
+Value 65 Count 999425
+Value 66 Count 999916
+Value 67 Count 1000281
+Value 68 Count 1000114
+Value 69 Count 999698
+Value 70 Count 1000609
+Value 71 Count 1000589
+Value 72 Count 999945
+Value 73 Count 1000252
+Value 74 Count 1000770
+Value 75 Count 999754
+Value 76 Count 1000361
+Value 77 Count 1000102
+Value 78 Count 999724
+Value 79 Count 999906
+Value 80 Count 999644
+Value 81 Count 999836
+Value 82 Count 1000035
+Value 83 Count 999750
+Value 84 Count 998906
+Value 85 Count 1000195
+Value 86 Count 999897
+Value 87 Count 1000133
+Value 88 Count 999740
+Value 89 Count 999894
+Value 90 Count 1000415
+Value 91 Count 1000542
+Value 92 Count 1001142
+Value 93 Count 999700
+Value 94 Count 999801
+Value 95 Count 1000046
+Value 96 Count 1000090
+Value 97 Count 1000208
+Value 98 Count 999619
+Value 99 Count 999788
