@@ -1,0 +1,46 @@
+object MainForm: TMainForm
+  Left = 345
+  Height = 314
+  Top = 196
+  Width = 1073
+  Caption = 'WPC 55'
+  ClientHeight = 314
+  ClientWidth = 1073
+  OnCreate = FormCreate
+  LCLVersion = '0.9.30.4'
+  object Image1: TImage
+    Left = 17
+    Height = 249
+    Top = 6
+    Width = 249
+  end
+  object Image2: TImage
+    Left = 280
+    Height = 249
+    Top = 6
+    Width = 250
+  end
+  object Button1: TButton
+    Left = 496
+    Height = 25
+    Top = 272
+    Width = 75
+    Caption = 'Go'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Shape1: TShape
+    Left = 544
+    Height = 250
+    Top = 6
+    Width = 250
+    Pen.Width = 2
+  end
+  object Shape2: TShape
+    Left = 808
+    Height = 250
+    Top = 6
+    Width = 250
+    Pen.Width = 2
+  end
+end
