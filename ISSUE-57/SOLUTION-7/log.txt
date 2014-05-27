@@ -1,0 +1,10 @@
+todorp@todorp-ThinkCentre-M52:~/test/url$ g++ -Wall ratio.cpp `pkg-config --cflags --libs libcurl` -o ratio
+todorp@todorp-ThinkCentre-M52:~/test/url$ ./ratio 
+use:./ratio url
+todorp@todorp-ThinkCentre-M52:~/test/url$ ./ratio www.olimex.com
+maybe can't calculate ratio correct  , https connection 
+ratio = 12.1212
+todorp@todorp-ThinkCentre-M52:~/test/url$ ./ratio www.dir.bg
+ratio = 0.0708077
+todorp@todorp-ThinkCentre-M52:~/test/url$ 
+
