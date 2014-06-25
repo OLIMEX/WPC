@@ -1,0 +1,17 @@
+todorp@todorp-ThinkCentre-M52:~/test/calc_calculator$ g++ -o seconds_converter seconds_converter.cpp 
+todorp@todorp-ThinkCentre-M52:~/test/calc_calculator$ ./seconds_converter 
+input date Day/Month/Year : 32/98/23
+incorrect date
+todorp@todorp-ThinkCentre-M52:~/test/calc_calculator$ 1/1/0
+bash: 1/1/0: No such file or directory
+todorp@todorp-ThinkCentre-M52:~/test/calc_calculator$ ./seconds_converter 
+input date Day/Month/Year : 1/1/0
+Seconds = 86400
+todorp@todorp-ThinkCentre-M52:~/test/calc_calculator$ ./seconds_converter 
+input date Day/Month/Year : 1/1/9
+Seconds = 252547200
+todorp@todorp-ThinkCentre-M52:~/test/calc_calculator$ ./seconds_converter 
+input date Day/Month/Year : 23/10/2007
+Seconds = 63330163200
+todorp@todorp-ThinkCentre-M52:~/test/calc_calculator$ 
+
