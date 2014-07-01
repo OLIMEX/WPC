@@ -7,7 +7,7 @@ Solutions:
 
 2. Rolf Ebert - Ada
 
-3. Marc - Python
+3. Marc - Pascal
 
 4. Nigel Mollett - C#
 
