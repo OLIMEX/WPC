@@ -1,0 +1,36 @@
+﻿Imports System.Runtime.InteropServices
+
+Module EndianDetector
+
+    Sub Main()
+        ' Allocate a 4 byte block of memory on the heap
+        Dim myPointer As IntPtr
+        myPointer = Marshal.AllocHGlobal(2)
+        Console.WriteLine("Address pointed to by myPointer = 0x{0:X}", myPointer.ToString)
+
+        ' Provide an odd value to ensure bit 0 is 1
+        Dim testValue = 513
+        Console.WriteLine("Writing hex value 0x{0:X4} to memory", testValue)
+
+        ' and write it directly into memory at the pointer
+        Marshal.WriteInt16(myPointer, testValue)
+
+        ' Look at each 
+        Dim loByte As Byte = Marshal.ReadByte(myPointer)
+        Console.WriteLine("First  byte in memory = 0x{0:X2}", loByte)
+
+        Dim hiByte As Byte = Marshal.ReadByte(myPointer + 1)
+        Console.WriteLine("Second byte in memory = 0x{0:X2}", hiByte)
+
+        If loByte And &H1 = 1 Then
+            Console.WriteLine("System is therefore little endian")
+        Else
+            Console.WriteLine("System is therefore big endian")
+        End If
+
+        Marshal.FreeHGlobal(myPointer)
+
+        Console.Read()
+    End Sub
+
+End Module

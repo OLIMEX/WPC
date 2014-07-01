@@ -1,0 +1,5 @@
+todorp@todorp-ThinkCentre-M52:~/test/endian$ javac Endian.java 
+todorp@todorp-ThinkCentre-M52:~/test/endian$ java Endian 
+Little-endian
+todorp@todorp-ThinkCentre-M52:~/test/endian$ 
+
