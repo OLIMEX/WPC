@@ -1,0 +1,8 @@
+todorp@todorp-ThinkCentre-M52:~/test/ptc$ g++ -o  PTClinearization  PTClinearization.cpp
+todorp@todorp-ThinkCentre-M52:~/test/ptc$ ./PTClinearization
+number of resistance in ohms: 2000
+temperature is125
+todorp@todorp-ThinkCentre-M52:~/test/ptc$ ./PTClinearization
+number of resistance in ohms: 6000
+no info
+todorp@todorp-ThinkCentre-M52:~/test/ptc$

@@ -1,0 +1,9 @@
+Resistance = 1000.00Ω  Temperature = 25.000°C
+Resistance = 490.00Ω  Temperature = -55.000°C
+Resistance = 2211.00Ω  Temperature = 150.000°C
+Resistance = 490.10Ω  Temperature = -54.980°C
+Resistance = 1000.10Ω  Temperature = 25.013°C
+Resistance = 1000.20Ω  Temperature = 25.025°C
+Resistance = 1000.30Ω  Temperature = 25.038°C
+Resistance = 1000.40Ω  Temperature = 25.050°C
+Resistance = 1234.00Ω  Temperature = 52.778°C

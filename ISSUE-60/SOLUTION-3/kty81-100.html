@@ -1,0 +1,76 @@
+<!--
+  -- KTI81/100 Resistance conversion to temperature.
+  -- (c) 2014 staicu.com 
+  -->
+<html>
+<head>
+    <title>KTI81/100 Temperature Calculator</title>
+    
+    <style type="text/css">
+    input {
+        width: 100px;
+        text-align: right;
+    }
+    input.button {
+	width: 200px;
+        text-align: center;
+    }
+    </style>
+    
+    <script type="text/javascript">
+        // Adjusts R value to be used for T >= 100C
+	function deltaR(r) {
+	    return (444.861 * r - 1624.83) * r + 1479.31;
+        }
+    
+	// Translates R into temperature (Celsius)
+        function tempC(r) {
+    	    return -185.0854 + Math.sqrt(44136.0 + 53362.0 * (r - 1));
+	}
+    
+	// Main method, validates and computes the temperature
+        function calculate(res){
+	    var rk = validate(res);
+	    if (!isNumeric(rk)) {
+		return;
+	    }
+	    var tc = tempC(rk);
+	    document.temp.t.value = Math.round(tc * 10) / 10;
+	    document.temp.f.value = Math.round((tc * 9 / 5 + 32) * 10) / 10;
+	}
+    
+	// Validates the input it's a number in supported range
+	function validate(res) {
+	    if (!isNumeric(res)) {
+		alert('Only numbers supported!');
+    		return false;
+	    }
+	    var r = parseFloat(res);
+	
+	    if (r < 475 || r > 2277) {
+		alert('R value outside supported range: [475, 2277]');
+		return false;
+	    }
+	
+	    return (r + (r > 1696 ? deltaR(r * 1e-3) : 0)) * 1e-3;
+	}
+    
+	// Checks if the input it's a number
+	function isNumeric(n) { 
+	    return !isNaN(parseFloat(n)) && isFinite(n);
+	}
+    </script>
+</head>
+<body>
+    <h1>KTY81/100 Resistence / Temperature Convertor</h1>
+    <p>Conversion formula computed from the parameters described in <a href="http://www.nxp.com/documents/other/SC17_GENERAL_TEMP_1996_3.pdf" target="_blank">Philips Temperature Sensors Data Sheet</a> (page 7).</p>
+    <p><i>T = -185.0854 + Math.sqrt(44136.0 + 53362.0 * (Rk - 1));</i>  where Rk is the measured value, in KiloOhms (that's R / 1000)</p>
+    <p>For T > 100 (and R > 1696) an additional compensation value is needed for R, approximated with:<p>
+    <p><i>deltaR = 444.861 * Rk * Rk - 1624.83 * Rk + 1479.31;</i> This value is added to R before doing the conversion.
+    <form name="temp">
+	<label for="r">Resistance[ohm]:</label><input name="r" /><br />
+	<label for="t">Temperature[C]:</label><input name="t" readonly /><br />
+	<label for="f">Temperature [F]:</label><input name="f" readonly /><br />
+	<input type="button" class="button" value="Calculate" onclick="javascript:calculate(r.value); return false;" />
+    </form>
+</body>
