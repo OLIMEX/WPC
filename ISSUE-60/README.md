@@ -23,7 +23,7 @@ Solutions:
 
 10. Carlo Amaglio - Java
 
-11. Antal Koos - Python
+11. Antal Koos - C
 
 12. Adib - Python
 
