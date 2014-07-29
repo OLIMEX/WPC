@@ -1,0 +1,3 @@
+todorp@todorp-ThinkCentre-M52:~/test/onemilion$ g++ -o onemillion onemillion.cpptodorp@todorp-ThinkCentre-M52:~/test/onemilion$ ./onemillion
+15625*64=1000000
+todorp@todorp-ThinkCentre-M52:~/test/onemilion$
