@@ -1,0 +1,111 @@
+clc
+clear all
+%close all
+
+%Image input
+ImIn = imread('lnd.bmp');
+[IX, IY, IZ] = size(ImIn);
+
+%Sum all RGB pixels to produce black and white image
+ImSum = ((ImIn(:,:,1)+ImIn(:,:,2)+ImIn(:,:,3))/3);
+ImBW(:,:,1) = ImSum;
+ImBW(:,:,2) = ImSum;
+ImBW(:,:,3) = ImSum;
+
+%Find the total image brightness
+ImB = sum(sum(ImSum))/numel(ImSum);
+
+%Define dithering arrays
+Dith0 = [0, 0, 0; 0, 0, 0; 0, 0, 0]; %0
+Dith1 = [0, 0, 0; 0, 255, 0; 0, 0, 0]; %1
+Dith2 = [0, 255, 0; 0, 0, 0; 0, 255, 0]; %2
+Dith3 = [0, 0, 255; 255, 0, 0; 0, 0, 255]; %3
+Dith4 = [0, 255, 0; 255, 0, 255; 0, 255, 0]; %4
+Dith5 = [255, 0, 255; 0, 255, 0; 255, 0, 255]; %5
+Dith6 = [255, 255, 0; 0, 255, 255; 255, 255, 0]; %6
+Dith7 = [255, 0, 255; 255, 255, 255; 255, 0, 255]; %7
+Dith8 = [255, 255, 255; 255, 0, 255; 255, 255, 255]; %8
+Dith9 = [255, 255, 255; 255, 255, 255; 255, 255, 255]; %9
+
+%Set Sensitivity dependent on total image brightness
+Sens = ImB/10;
+%Sens = 4;
+Rot = 0;
+
+for YCnt = 1:3:IY-3
+    for XCnt = 1:3:IX-3
+        %Sum Pixels in a 3x3 square
+        SumPix = (sum(ImBW(XCnt:XCnt+2, YCnt, 1))+sum(ImBW(XCnt:XCnt+2, YCnt+1, 1))+sum(ImBW(XCnt:XCnt+2, YCnt+2, 1)))/Sens;
+        %SumPix = (0.299*sum(ImBW(XCnt:XCnt+2, YCnt, 1))+0.587*sum(ImBW(XCnt:XCnt+2, YCnt+1, 1))+0.114*sum(ImBW(XCnt:XCnt+2, YCnt+2, 1)))/Sens;
+
+        %If rotation is enabled, rotate each dithering array after use
+        if Rot == 1
+            if SumPix<25
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith0;
+                Dith0=rot90(Dith0);
+            elseif SumPix<50
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith1;
+                Dith1=rot90(Dith1);
+            elseif SumPix<75
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith2;
+                Dith2=rot90(Dith2);
+            elseif SumPix<100
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith3;
+                Dith3=rot90(Dith3);
+            elseif SumPix<125
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith4;
+                Dith4=rot90(Dith4);
+            elseif SumPix<150
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith5;
+                Dith5=rot90(Dith5);
+            elseif SumPix<175
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith6;
+                Dith6=rot90(Dith6);
+            elseif SumPix<200
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith7;
+                Dith7=rot90(Dith7);
+            elseif SumPix<225
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith8;
+                Dith8=rot90(Dith8);
+            elseif SumPix>225
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith9;
+                Dith9=rot90(Dith9);
+            end
+        else %If rotate is not enabled, don't rotate arrays!
+            if SumPix<25
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith0;
+            elseif SumPix<50
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith1;
+            elseif SumPix<75
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith2;
+            elseif SumPix<100
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith3;
+            elseif SumPix<125
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith4;
+            elseif SumPix<150
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith5;
+            elseif SumPix<175
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith6;
+            elseif SumPix<200
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith7;
+            elseif SumPix<225
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith8;
+            elseif SumPix>225
+                ImTmp(XCnt:XCnt+2, YCnt:YCnt+2, 1) = Dith9;
+            end
+        end
+    end
+end
+
+%Display input image, black and white image and dithered image
+figure(1)
+image(ImIn);
+figure(2)
+image(ImBW);
+figure(3)
+ImTmp(:,:,2) = ImTmp(:,:,1);
+ImTmp(:,:,3) = ImTmp(:,:,1);
+image(uint8(ImTmp));
+
+%Save image as PNG file.
+imwrite(ImTmp, 'ImOut.png', 'PNG');

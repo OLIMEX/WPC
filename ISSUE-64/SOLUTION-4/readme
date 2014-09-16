@@ -1,0 +1,15 @@
+Hi Olimex!
+
+Probably not the ideal solution to the problem but I designed my own Floyd
+Steinberg-esque dithering where I convert a colour image into a black and
+white image where the image brightness is dependent on the brightness of
+the colour image, over a 3x3 pixel area. I've written a blog post on it
+here: http://hsel.co.uk/2014/09/03/floyd-steinbergesque-dithering-in-matlab/
+
+As you can probably tell by the title, I wrote it in Matlab. I started
+writing it in C but never got round to it unfortunately.
+
+My matlab code can be found in the attached text file.
+
+Cheers!
+Harris

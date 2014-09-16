@@ -1,0 +1,51 @@
+As you know there are many way to loose information moving from color data
+to gray scale representation.
+The human eye has three colors receptors, Red, Green, and Blue, each of
+them respond to a small section of the spectrum, and they overlap.
+
+Average method you showed is the most common gray scale conversion routine
+but doesn't take care of the eye sensitivity (especially for the green).
+
+Luminance intensity, that is a sum of different weight of each color
+component, can be more detailed as described into ITU-R recommendation
+BT.709 or BT.601.
+
+The formula (BT.601): Gray = (Red * 0.299 + Green * 0.587 + Blue * 0.114)
+This implementation is quite simple in C/C++ if we assume than each pixel
+is defined by three consecutive values [R,G,B,...]:
+
+for ( i = 0; i < imagesize-1; i += 3 )
+{
+    Gray[i/3] = (unsigned char)(0.299*image[i] + 0.587*image[i+1] + 0.114*
+image[i+2] + 0.5);
+}
+
+To speed up your operation, because multiplication in integer domain is
+much faster than in float, we can use: Gray = (2 * Red + 5 * Green + 1 *
+Blue) / 8
+and optimize the code by substituting the multiplication and division into
+bit shift operators and addition:
+
+int tmp;
+for ( i = 0; i < imagesize-1; i += 3 )
+{
+    tmp = in[i] << 1;
+    tmp += in[i+1] << 2 + in[i+1];
+    tmp += in[i+2];
+    Gray[i/3] = (unsigned char)(tmp >> 3);
+}
+
+
+Thirdly, you can also find interesting desaturation (w or w/ dithering)
+method as well as those based on perceptual evaluation.
+In addition, a very nice method is (the simplest and the fastest, even if
+the worst): Gray = Green
+
+for ( i = 0; i < imagesize-1; i += 3 )
+{
+    Gray[i/3] = image[i+1];
+}
+
+
+Kindly regards,
+Riccardo

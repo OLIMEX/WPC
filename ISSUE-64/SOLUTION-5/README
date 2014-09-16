@@ -1,0 +1,30 @@
+Convert a colored image to grayscale.
+
+Conversion of a color image to grayscale is not unique; different
+weighting of the color channels effectively represent the effect of
+shooting black-and-white film with different-colored photographic
+filters on the cameras.
+
+Colorimetric (luminance-preserving) conversion to grayscale
+
+A common strategy is to use the principles of photometry or, more
+broadly, colorimetry to match the luminance of the grayscale image to
+the luminance of the original color image.[2][3] This also ensures that
+both images will have the same absolute luminance, as can be measured in
+its SI units of candelas per square meter, in any given area of the
+image, given equal whitepoints. In addition, matching luminance provides
+matching perceptual lightness measures, such as L* (as in the 1976 CIE
+Lab color space) which is determined by the luminance Y (as in the CIE
+1931 XYZ color space).
+
+sudo apt-get install libjpeg libjpeg-dev zlib1g-dev
+
+You might need to symlink for PIP to compile with PNG and JPEG support
+sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib
+sudo ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
+
+sudo pip install PIP
+
+usage:
+
+./luminance.py inputfile outputfile 

@@ -1,0 +1,42 @@
+object MainForm: TMainForm
+  Left = 486
+  Height = 320
+  Top = 197
+  Width = 550
+  Caption = 'WPC 64'
+  ClientHeight = 320
+  ClientWidth = 550
+  OnCreate = FormCreate
+  LCLVersion = '0.9.30.4'
+  object Image1: TImage
+    Left = 17
+    Height = 249
+    Top = 6
+    Width = 249
+  end
+  object Image2: TImage
+    Left = 280
+    Height = 249
+    Top = 6
+    Width = 250
+  end
+  object Button1: TButton
+    Left = 232
+    Height = 25
+    Top = 288
+    Width = 75
+    Caption = 'Go'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 18
+    Height = 16
+    Top = 266
+    Width = 510
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Test image © Sarah Klockars-Clauser CC:Attribution-ShareAlike'
+    ParentColor = False
+  end
+end
