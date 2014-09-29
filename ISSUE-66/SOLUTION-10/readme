@@ -1,0 +1,11 @@
+not very clever ... 199 characters (should be one line)
+
+print"eNplj0sOAyEMQ/ecIrt0kIgPVEaWqi57/3WTICZT1QsDD5tPk5usXVMSMskCMx0FYCpqs4BArM/fAKUApMuDh14EXWxo3LsRjOop97GLiI7Hli+YRWZz0PNJEWetVAy+FVjtX1pvfDJ13n4xA2CvPu9Xa19/MzEz".decode("base64").decode("zlib")
+
+
+also cute (236 chars, also on one line):
+
+print"eNptjbEKwzAMRHd/hbba0MR7IX8iELgNIWB6pcnQoR9fOXFtQ3K3yOcnnaGigc40mP/kGZ4P/1taGPbC/sBsqakr4JMiTWsVgQojlaCWSa9MfNXNpilnqEJWXEVaCJTbLp2Vm7jumqG9TVReoBawzlYUEpfSFKlTKvERFA7zGvC547kgjn2ImJYX1h7v6QcH3UvH".decode("base64").decode("zlib")
+".decode("base64").decode("zlib")
+
+bitboxconsole.blogspot.com 
