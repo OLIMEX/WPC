@@ -1,0 +1,2 @@
+C:\temp\mathwithwords\bin\Debug>mathwithwords.exe < in.txt
+325753-1056=324697
