@@ -1,0 +1,52 @@
+C:\temp\knock_lock\bin\Debug>knock_lock.exe
+doubleclick <space> for define short time interval
+doubleclick <space> for define long time interval
+time short [0.203000],time long [1.032000]
+input pattern open(unlock)
+input s-short
+input l-long
+q-quit
+s
+s
+input pattern close(lock)
+input s-short
+input l-long
+q-quit
+l
+l
+testing
+c-clear data
+q-quit
+OPEN/UNLOCK
+clear
+OPEN/UNLOCK
+clear
+CLOSE/LOCK
+clear
+
+C:\temp\knock_lock\bin\Debug>knock_lock.exe
+doubleclick <space> for define short time interval
+doubleclick <space> for define long time interval
+time short [0.219000],time long [1.219000]
+input pattern open(unlock)
+input s-short
+input l-long
+q-quit
+s
+input pattern close(lock)
+input s-short
+input l-long
+q-quit
+l
+testing
+c-clear data
+q-quit
+OPEN/UNLOCK
+clear
+OPEN/UNLOCK
+clear
+CLOSE/LOCK
+clear
+CLOSE/LOCK
+clear
+OPEN/UNLOCK
