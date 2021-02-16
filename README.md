@@ -4,12 +4,12 @@ From history:
 
 > The idea for this Weekend Programming Challenge came as follow up of
 > our [Friday Free Board
-> Quiz](http://olimex.wordpress.com/2013/03/22/weekend-programming-challenge).  
+> Quiz](http://olimex.wordpress.com/2013/03/22/weekend-programming-challenge).
 > It’s over the weekend competition, where every Friday we post problem
 > on our blog and you have one weekend time to think and come with the
 > best solution. In Monday we will upload the solutions here and by the
 > end of the day we will analyze and rise winner.
-> 
+>
 > After we post the solutions everyone is welcome to e-mail us at
 > support \[at\] olimex \[dot\] com their favourite solution with
 > arguments why they think this solution is best. This way we will be
@@ -30,7 +30,7 @@ point C and the line defined by point A, B.
 If `A[N]` is array of `N` integers shuffle the elements of `A` in such
 way that the differences between each neighbour elements `d[i] = A[i] -
 A[i+1]` make row in ascending order. For instance: `A[4] = { 10, 2, 7, 4
-}`  
+}`
 possible solutions are:
 
     { 2, 7, 10, 4 } because  (2 – 7) < (7 – 10) < (10 – 4)
@@ -52,9 +52,9 @@ different) found in the text.
 
 CNC drill machine drills holes in Printed Circuit Boards (PCB) with
 maximum board size (i.e. maximal coordinates of the drill holes) 999.999
-x 999.999 mm  
+x 999.999 mm
 The machine head have task to drill between 1 and 2000 holes on the
-PCB.  
+PCB.
 To drill the holes the machine takes input file in the following format:
 
   - first row define drill size: Txx where xx is the drill size 01 = 0.1
@@ -113,9 +113,8 @@ connected obstacles in the maze.
 Similar word are these which differs by one character only i.e. one
 character changed or inserted or deleted. For example: if using this
 concept the word “hello” is considered similar to “hella” and to “hell”
-or “shello”. Make code which enters word then scans:
-*http://fiction.eserver.org/novels/alice\_in\_wonderland.html* and
-prints all similar words to the one which is entered.
+or “shello”. Make code which enters word then scans: *Alice’s Adventures in Wonderland*
+ and prints all similar words to the one which is entered.
 
 ## [Issue 13](ISSUE-13/): Make code which converts picture to ASCII art
 
@@ -159,7 +158,7 @@ rod.
 
 BAS-INT is freeware tiny Basic interpreter with the bare minimum for
 BASIC scripting language. It works with external files only and is with
-Basic Stamp like syntax.  
+Basic Stamp like syntax.
 The Challenge today is to write minimal console editor which to
 complement BAS-INT and to perform some very basic commands:
 
@@ -182,12 +181,12 @@ Make function match() which takes as input input\_string and
 pattern\_string, the input strings may contain any ASCII codes. There
 are two special codes for use in the pattern-string: `?` replaces 1
 character and `*` replaces any character(s). The function should print
-all words from the input-string which match the pattern-string.  
-Words can be separated by any of these characters: `‘ ” . , : ;`  
+all words from the input-string which match the pattern-string.
+Words can be separated by any of these characters: `‘ ” . , : ;`
 If the input-string have this content “The big black cat jump over the
 window”:
 
-``` 
+```
     if pattern-string is “b*” should print
         big
         black
@@ -206,13 +205,13 @@ window”:
 An anagram is a type of word play, the result of rearranging the letters
 of a word or phrase to produce a new word or phrase, using all the
 original letters exactly once; for example ‘orchestra’ can be rearranged
-into ‘carthorse’.  
+into ‘carthorse’.
 Find all anagram words in text file, you can use as word source our well
-known: *http://fiction.eserver.org/novels/alice\_in\_wonderland.html*
+known: *Alice’s Adventures in Wonderland*
 
 ## [Issue 21](ISSUE-21/): Words Puzzle
 
-``` 
+```
     Aoccdrnig to a rscheearch at Cmabrigde Uinervtisy, it deosn’t mttaer in waht oredr the ltteers in a wrod are,
     the olny iprmoetnt tihng is taht the frist and lsat ltteer be at the rghit pclae. The rset can be a toatl mses
     and you can sitll raed it wouthit porbelm. Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef,
@@ -220,7 +219,7 @@ known: *http://fiction.eserver.org/novels/alice\_in\_wonderland.html*
 ```
 
 You can see original text here: [MRC Cognition and Brain Sciences
-Unit](http://www.mrc-cbu.cam.ac.uk/people/matt.davis/Cmabrigde/)  
+Unit](http://www.mrc-cbu.cam.ac.uk/people/matt.davis/Cmabrigde/)
 Write code which takes as input normal text and shuffles the letters
 inside the words to make text like this one above.
 
@@ -235,7 +234,7 @@ in different order. More advanced version may take care for synonyms.
 Invent something small and evil which to be almost invisible and to
 cause lot of troubles to catch like:
 
-``` 
+```
     #define struct union
     #define double float
     #define floor ceil
@@ -248,7 +247,7 @@ cause lot of troubles to catch like:
 Write code which calculate the number of ways you can express positive
 natural number N as sum of positive natural numbers.
 
-``` 
+```
     For N=1 we have 1 way;
     for N=3 we have 3 ways: 1+1+1, 1+2, 3;
     etc.
@@ -276,10 +275,10 @@ inputs:
 
 ## [Issue 26](ISSUE-26/): Square
 
-Write code which check if four points make square.  
+Write code which check if four points make square.
 Input data for squares:
 
-``` 
+```
     (0,0),(0,1),(1,1),(1,0)     - normal square
     (0,0),(2,1),(3,-1),(1,-2)   - not aligned square
     (0,0),(1,1),(0,1),(1,0)     - different order of the points
@@ -287,7 +286,7 @@ Input data for squares:
 
 input data for non-squares:
 
-``` 
+```
     (0,0),(0,2),(3,2),(3,0)     - rectangle
     (0,0),(3,4),(8,4),(5,0)     - rhombus
     (0,0),(0,0),(1,1),(0,0)     - three points are same
@@ -310,9 +309,9 @@ drawing is OK.
 
 ## [Issue 28](ISSUE-28/): Sudoku
 
-Make code which solves Sudoku in 3×3 configuration.  
+Make code which solves Sudoku in 3×3 configuration.
 Input: enter the initial cells which are initialized with start
-numbers  
+numbers
 Check the input for correctness then print solution(s).
 
 ## [Issue 29](ISSUE-29/): Make code which scrapes GitHub and extracts all developer’s e-mails.
@@ -324,7 +323,7 @@ Note: This is for educational purposes and not to be used for evil\!
 ## [Issue 31](ISSUE-31/): Run Length Encoding/Decoding
 
 RLE/D is the simplest way to compress data
-[wiki](http://en.wikipedia.org/wiki/Run-length_encoding)  
+[wiki](http://en.wikipedia.org/wiki/Run-length_encoding)
 Implement RLE/D in shortest/simplest way possible using your favourite
 language.
 
@@ -343,7 +342,7 @@ Write the shortest possible code which will make infinite output.
 
 Persistence of Vision (POV) is made with stripe of LEDs which rotates at
 360 degree. If we assume the stripe is with 100 LEDs you can make square
-“screen” with size approx 140×140 pixels.  
+“screen” with size approx 140×140 pixels.
 Make code which converts 140×140 pixels picture to array of LED stripe
 values for each angle 0-360. When LED from the stripe are not at exact
 pixel positions the best way to set their value is to mediate the value
@@ -352,7 +351,7 @@ depend on the closest pixel neighbors.
 ## [Issue 35](ISSUE-35/): Maze
 
 Maze with 10×10 cells have obstracles placed on random cells marked with
-the black.  
+the black.
 Make code which finds path which starts from cell (1,1) and moves
 through all Maze cells and returns back to cell(1,1) without stepping on
 same cell more than once.
@@ -377,7 +376,7 @@ Make code which calculates the center of mass and display it.
 ## [Issue 39](ISSUE-39/): CRC-16
 
 Cyclic Redundancy Check is error detecting code used in serial devices
-to detect accidental errors in the input data.  
+to detect accidental errors in the input data.
 Make code which calculates CRC-16.
 
 ## [Issue 40](ISSUE-40/): Number approximation
@@ -386,7 +385,7 @@ Any positive integer number can be presented as 1 and several operations
 \*3 and /2 discarding the result after the decimal point when dividing.
 For instance:
 
-``` 
+```
                      4 = 1 *3 *3 /2
                     12 = 1 *3 *3 /2 *3
 ```
@@ -404,7 +403,7 @@ interface, make something funny and interesting.
 ## [Issue 42](ISSUE-42/): No-Lift-Pen Drawings
 
 We all know this game where you draw figure on paper without lifting up
-your pen and without going through same segment twice.  
+your pen and without going through same segment twice.
 Write code which enters N segments with their coordinates X1,Y1,X2,Y2
 then check if it’s possible to draw all segments without lifting your
 pen and if YES write the path sequence.
@@ -414,7 +413,7 @@ pen and if YES write the path sequence.
 Bank card numbers are not random, they carry information for the card
 processor (Visa/Mastercard etc), bank which issued the card, the account
 and checksum. More on the subject is available at
-[wiki](http://en.wikipedia.org/wiki/Bank_card_number)  
+[wiki](http://en.wikipedia.org/wiki/Bank_card_number)
 Make code which enters card number and validate it i.e. writes VALID or
 INVALID number has been entered.
 
@@ -424,7 +423,7 @@ We all have seen how ECG looks stylized, in real life there is usually
 lot of noise add to this signal. For today’s Challenge I asked one of
 our employee – Penko to connect himself to EEG-SMT and to stay calm so
 his ECG signal is captured on file. This file is already upload to
-GitHub and you can use as input data.  
+GitHub and you can use as input data.
 Make code which detect the heart rate using this raw signal info.
 Description of the data packages is also upload on Github.
 
@@ -432,7 +431,7 @@ Description of the data packages is also upload on Github.
 
 Median Filter is the simplest way to remove random noise from input
 signal. More about it you can read at
-[wiki](http://en.wikipedia.org/wiki/Median_filter)  
+[wiki](http://en.wikipedia.org/wiki/Median_filter)
 Using the info from the previous [Issue 44](#issue44) challenge, make
 Median Filter and experiment with different window sizes to filter the
 raw ECG info and to see how it changes the shape of the signal and the
@@ -440,7 +439,7 @@ measurements of the pulse rate.
 
 ## [Issue 46](ISSUE-46/): Clock arrows
 
-Clock minute and hour arrows cross as they revolve around.  
+Clock minute and hour arrows cross as they revolve around.
 Make code that compute how many times the arrows cross in one twelve
 hour period, and print list of those times.
 
@@ -490,7 +489,7 @@ Make your own Random Number Generator.
 
 ## [Issue 54](ISSUE-54/): FFT
 
-Fourier Transform is basic instrument for spectrum analyze of signals.  
+Fourier Transform is basic instrument for spectrum analyze of signals.
 Make Fast Fourier Transform (FFT) implementation in your favourite
 language, try to compute the spectrum on sample sound file and to
 visualize it.
@@ -498,7 +497,7 @@ visualize it.
 ## [Issue 55](ISSUE-55/): Draw Bot
 
 Today’s challenge was inspired by this article:
-[trs-drawbot](http://makezine.com/projects/trs-drawbot/)  
+[trs-drawbot](http://makezine.com/projects/trs-drawbot/)
 Simple draw bot draws continual line without lifting the pen up. From
 what I see the lines do not cross.
 
@@ -512,7 +511,7 @@ Perfect Number you can and let us know what result did you got.
 
 Some people think text to HTML tags ratio on web page is important
 parameter for Google indexing and good sites should have about 20-30%
-ratio of pure text vs HTML tags.  
+ratio of pure text vs HTML tags.
 Make code which calculates Text/HTML ratio on given html page.
 
 ## [Issue 58](ISSUE-58/): Date to Seconds converter
@@ -529,7 +528,7 @@ Endian. Can you do it in other language than C?
 
 KTY81/110 is non linear resistor which increases it’s value with
 temperature. You can read the datasheet here:
-[KTY81\_SER.pdf](http://www.nxp.com/documents/data_sheet/KTY81_SER.pdf)  
+[KTY81\_SER.pdf](http://www.nxp.com/documents/data_sheet/KTY81_SER.pdf)
 Make code which input KTY81/110 real number of resistance in ohms and
 output the temperature of the sensor.
 
@@ -603,7 +602,7 @@ spaces at the end of the line. You can use this text to test your code:
 ## [Issue 69](ISSUE-69/): Levenshtein Distance
 
 Levenshtein Distance is string metrics for measuring the difference
-between two sequences.  
+between two sequences.
 Make code which inputs two strings and calculate Levenshtein Distance
 between them.
 
@@ -615,7 +614,7 @@ their words equivalents. Please support numbers up to 1 000 000 and
 these operators `+ – * /` Example:
 
     input: "three thousands five hundreds and twenty five plus one hundred and thirty three is equal to"
-    
+
     output: "3658"
 
 ## [Issue 71](ISSUE-71/): Knock Lock
@@ -624,10 +623,10 @@ Make code which implements knock pattern recognition for door
 open/close. There must be option to learn knock sequence. Then every
 time when this sequence is implemented door lock opens and you signal
 this. To simplify the lock we assume between knocks there will be only
-two intervals short and long.  
+two intervals short and long.
 For instance your code should be able to “learn” this sequence:
 
     knock-short-knock-short-knock-long-knock-long-knock-long-knock
 
-i.e. three fast and three slow knocks and this to open the door.  
+i.e. three fast and three slow knocks and this to open the door.
 For knock detecting you can use SPACE key press for instance.
